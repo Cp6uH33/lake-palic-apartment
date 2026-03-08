@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  /* Ovo postavlja Inter kao glavni font za tekstove */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  /* Ovo kreira novu klasu za naš luksuzni naslovni font */
+  --font-serif: 'Playfair Display', ui-serif, Georgia, serif;
+}
+
+/* Naša unikatna Bounce In animacija */
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-bounce-in {
+  animation: bounceIn 2.5s cubic-bezier(0.28, 0.84, 0.42, 1) forwards;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-in-out;
+}
