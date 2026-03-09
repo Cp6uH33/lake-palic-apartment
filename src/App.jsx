@@ -381,7 +381,7 @@ const Guide = ({ lang }) => {
         </div>
       </div>
       {selectedPlace && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 sm:p-6 bg-slate-900/70 backdrop-blur-sm animate-fade-in">
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-slate-900/70 backdrop-blur-sm animate-fade-in">
           <div className="bg-white w-full max-w-3xl rounded-3xl overflow-hidden shadow-2xl relative flex flex-col max-h-[90vh]">
             <button onClick={() => setSelectedPlace(null)} className="absolute top-4 right-4 z-20 bg-black/50 hover:bg-black/80 text-white p-2 rounded-full backdrop-blur-md transition-colors"><svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
             <div className="h-64 sm:h-80 w-full relative shrink-0">
