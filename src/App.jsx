@@ -193,7 +193,7 @@ const Hero = ({ lang }) => {
 
   return (
     <header className="relative min-h-[95vh] flex flex-col items-center justify-center w-full overflow-hidden pb-8 pt-24 sm:pt-32">
-      <div className="absolute inset-0 w-full h-full bg-[url('/hero.jpg')] bg-cover bg-center bg-no-repeat" style={{ backgroundAttachment: 'fixed' }}></div>
+      <div className="absolute inset-0 w-full h-full bg-[url('/hero.webp')] bg-cover bg-center bg-no-repeat" style={{ backgroundAttachment: 'fixed' }}></div>
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/80"></div>
 
       <div className="relative z-10 w-full max-w-5xl mx-auto px-6 text-center flex flex-col items-center justify-center h-full">
@@ -268,9 +268,13 @@ const Accommodation = ({ lang }) => {
         <div className="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 flex flex-col">
           <div className="h-72 md:h-80 relative group">
             <Swiper modules={[Navigation, Pagination]} navigation pagination={{ clickable: true }} className="w-full h-full">
-              <SwiperSlide><img src="/slika5.jpg" className="w-full h-full object-cover" alt="Lake Palić" /></SwiperSlide>
-              <SwiperSlide><img src="/slika4.jpg" className="w-full h-full object-cover" alt="Lake Palić" /></SwiperSlide>
-              <SwiperSlide><img src="/slika3.jpg" className="w-full h-full object-cover" alt="Lake Palić" /></SwiperSlide>
+              <SwiperSlide><img src="/PSlika1.webp" className="w-full h-full object-cover" alt="Lake Palić" /></SwiperSlide>
+              <SwiperSlide><img src="/PSlika2.webp" className="w-full h-full object-cover" alt="Lake Palić" /></SwiperSlide>
+              <SwiperSlide><img src="/PSlika6.webp" className="w-full h-full object-cover" alt="Lake Palić" /></SwiperSlide>
+              <SwiperSlide><img src="/PSlika5.webp" className="w-full h-full object-cover" alt="Lake Palić" /></SwiperSlide>
+              <SwiperSlide><img src="/PSlika2.webp" className="w-full h-full object-cover" alt="Lake Palić" /></SwiperSlide>
+              <SwiperSlide><img src="/PSlika6.webp" className="w-full h-full object-cover" alt="Lake Palić" /></SwiperSlide>
+              <SwiperSlide><img src="/PSlika5.webp" className="w-full h-full object-cover" alt="Lake Palić" /></SwiperSlide>
             </Swiper>
             <div className="absolute top-4 right-4 z-10 bg-white/90 backdrop-blur py-1 px-3 rounded-full text-sm font-bold text-slate-800 shadow-sm">{t.acc_max_people}</div>
           </div>
@@ -287,7 +291,14 @@ const Accommodation = ({ lang }) => {
         <div className="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 flex flex-col">
           <div className="h-72 md:h-80 relative group">
             <Swiper modules={[Navigation, Pagination]} navigation pagination={{ clickable: true }} className="w-full h-full">
-              <SwiperSlide><img src="/slika2.jpg" className="w-full h-full object-cover" alt="Apartman Rakanović" /></SwiperSlide>
+              <SwiperSlide><img src="/RSlika1.webp" className="w-full h-full object-cover" alt="Apartman Rakanović" /></SwiperSlide>
+              <SwiperSlide><img src="/RSlika2.webp" className="w-full h-full object-cover" alt="Apartman Rakanović" /></SwiperSlide>
+              <SwiperSlide><img src="/RSlika3.webp" className="w-full h-full object-cover" alt="Apartman Rakanović" /></SwiperSlide>
+              <SwiperSlide><img src="/RSlika3.webp" className="w-full h-full object-cover" alt="Apartman Rakanović" /></SwiperSlide>
+              <SwiperSlide><img src="/RSlika3.webp" className="w-full h-full object-cover" alt="Apartman Rakanović" /></SwiperSlide>
+              <SwiperSlide><img src="/RSlika3.webp" className="w-full h-full object-cover" alt="Apartman Rakanović" /></SwiperSlide>
+              <SwiperSlide><img src="/RSlika3.webp" className="w-full h-full object-cover" alt="Apartman Rakanović" /></SwiperSlide>
+
             </Swiper>
             <div className="absolute top-4 right-4 z-10 bg-white/90 backdrop-blur py-1 px-3 rounded-full text-sm font-bold text-slate-800 shadow-sm">{t.acc_max_people}</div>
           </div>
@@ -317,30 +328,30 @@ const Guide = ({ lang }) => {
     if (lang === 'en') {
       return [
         { name: 'Lake Palić', desc: 'Symbol of the region, ideal for long walks and relaxation.', fullDesc: 'Lake Palić is the largest natural lake in Serbia and a true oasis of peace. Surrounded by beautiful promenades, old luxury villas from the Art Nouveau period, and century-old parks.', location: 'Lajos Vermes Coast, Palić', tag: 'Nature', image: '/mesto1.webp' },
-        { name: 'Palić Zoo', desc: 'Beautiful park with rich flora and fauna, perfect for families.', fullDesc: 'Not just an ordinary zoo, but a beautiful botanical park with over 270 species of trees and shrubs.', location: 'Krfska 4, Palić', tag: 'Family', image: '/mesto2.jpg' },
-        { name: 'Zvonko Bogdan Winery', desc: 'Enjoy premium wines and beautiful architecture.', fullDesc: 'Located just a few hundred meters from the lake, it represents a blend of modern technology and traditional architecture in the Art Nouveau style.', location: 'Kanjiški put 45, Palić', tag: 'Gastronomy', image: '/mesto3.jpg' },
-        { name: 'City Hall', desc: 'Masterpiece of Hungarian Art Nouveau in the center of Subotica.', fullDesc: 'Symbol of Subotica and one of the most significant architectural works in the region. Built in the early 20th century, richly decorated with Zsolnay ceramics.', location: 'Trg Slobode 1, Subotica', tag: 'Architecture', image: '/mesto4.jpg' },
-        { name: 'Synagogue', desc: 'One of the most beautiful and largest buildings of this type in Europe.', fullDesc: 'Subotica Synagogue, built in 1902, is the second largest in Europe. Its interior takes your breath away – painted with floral motifs.', location: 'Trg Jakaba i Komora 6, Subotica', tag: 'Culture', image: '/mesto5.jpg' },
-        { name: 'Raichle Palace', desc: 'A building of surreal beauty that looks like it came from a fairy tale.', fullDesc: 'Raichle Palace is probably the most photographed building in Subotica. Architect Ferenc Raichle built it as his home and architectural office.', location: 'Park Rajhl Ferenca 5, Subotica', tag: 'Art', image: '/mesto6.jpg' }
+        { name: 'Palić Zoo', desc: 'Beautiful park with rich flora and fauna, perfect for families.', fullDesc: 'Not just an ordinary zoo, but a beautiful botanical park with over 270 species of trees and shrubs.', location: 'Krfska 4, Palić', tag: 'Family', image: '/mesto2.webp' },
+        { name: 'Zvonko Bogdan Winery', desc: 'Enjoy premium wines and beautiful architecture.', fullDesc: 'Located just a few hundred meters from the lake, it represents a blend of modern technology and traditional architecture in the Art Nouveau style.', location: 'Kanjiški put 45, Palić', tag: 'Gastronomy', image: '/mesto3.webp' },
+        { name: 'City Hall', desc: 'Masterpiece of Hungarian Art Nouveau in the center of Subotica.', fullDesc: 'Symbol of Subotica and one of the most significant architectural works in the region. Built in the early 20th century, richly decorated with Zsolnay ceramics.', location: 'Trg Slobode 1, Subotica', tag: 'Architecture', image: '/mesto4.webp' },
+        { name: 'Synagogue', desc: 'One of the most beautiful and largest buildings of this type in Europe.', fullDesc: 'Subotica Synagogue, built in 1902, is the second largest in Europe. Its interior takes your breath away – painted with floral motifs.', location: 'Trg Jakaba i Komora 6, Subotica', tag: 'Culture', image: '/mesto5.webp' },
+        { name: 'Raichle Palace', desc: 'A building of surreal beauty that looks like it came from a fairy tale.', fullDesc: 'Raichle Palace is probably the most photographed building in Subotica. Architect Ferenc Raichle built it as his home and architectural office.', location: 'Park Rajhl Ferenca 5, Subotica', tag: 'Art', image: '/mesto6.webp' }
       ];
     } else if (lang === 'hu') {
       return [
         { name: 'Palicsi-tó', desc: 'A régió szimbóluma, ideális hosszú sétákra és pihenésre.', fullDesc: 'A Palicsi-tó Szerbia legnagyobb természetes tava és a béke igazi oázisa. Gyönyörű sétányok, szecessziós luxusvillák és évszázados parkok veszik körül.', location: 'Lajos Vermes part, Palics', tag: 'Természet', image: '/mesto1.webp' },
-        { name: 'Palicsi Állatkert', desc: 'Gyönyörű park gazdag növény- és állatvilággal, tökéletes családoknak.', fullDesc: 'Nem csak egy hétköznapi állatkert, hanem egy gyönyörű botanikus kert több mint 270 fafajjal.', location: 'Korfu utca 4, Palics', tag: 'Család', image: '/mesto2.jpg' },
-        { name: 'Zvonko Bogdan Pincészet', desc: 'Élvezze a prémium borokat és a gyönyörű építészetet.', fullDesc: 'Alig néhány száz méterre a tótól, a modern technológia és a hagyományos szecessziós építészet ötvözete.', location: 'Kanizsai út 45, Palics', tag: 'Gasztronómia', image: '/mesto3.jpg' },
-        { name: 'Városháza', desc: 'A magyar szecesszió remekműve Szabadka központjában.', fullDesc: 'Szabadka szimbóluma és a régió egyik legjelentősebb építészeti alkotása. A 20. század elején épült, Zsolnay kerámiával gazdagon díszítve.', location: 'Szabadság tér 1, Szabadka', tag: 'Építészet', image: '/mesto4.jpg' },
+        { name: 'Palicsi Állatkert', desc: 'Gyönyörű park gazdag növény- és állatvilággal, tökéletes családoknak.', fullDesc: 'Nem csak egy hétköznapi állatkert, hanem egy gyönyörű botanikus kert több mint 270 fafajjal.', location: 'Korfu utca 4, Palics', tag: 'Család', image: '/mesto2.webp' },
+        { name: 'Zvonko Bogdan Pincészet', desc: 'Élvezze a prémium borokat és a gyönyörű építészetet.', fullDesc: 'Alig néhány száz méterre a tótól, a modern technológia és a hagyományos szecessziós építészet ötvözete.', location: 'Kanizsai út 45, Palics', tag: 'Gasztronómia', image: '/mesto3.webp' },
+        { name: 'Városháza', desc: 'A magyar szecesszió remekműve Szabadka központjában.', fullDesc: 'Szabadka szimbóluma és a régió egyik legjelentősebb építészeti alkotása. A 20. század elején épült, Zsolnay kerámiával gazdagon díszítve.', location: 'Szabadság tér 1, Szabadka', tag: 'Építészet', image: '/mesto4.webp' },
         { name: 'Zsinagóga', desc: 'Európa egyik legszebb és legnagyobb ilyen típusú épülete.', fullDesc: 'Az 1902-ben épült szabadkai zsinagóga Európa második legnagyobbja. Belseje lélegzetelállító – virágmotívumokkal festve.', location: 'Jakab és Komor tér 6, Szabadka', tag: 'Kultúra', image: '/mesto5.jpg' },
-        { name: 'Raichle-palota', desc: 'Szürreális szépségű épület, amely mintha egy meséből lépett volna elő.', fullDesc: 'A Raichle-palota talán a legtöbbet fényképezett épület Szabadkán. Raichle Ferenc építész saját otthonaként és irodájaként építette.', location: 'Raichle Ferenc park 5, Szabadka', tag: 'Művészet', image: '/mesto6.jpg' }
+        { name: 'Raichle-palota', desc: 'Szürreális szépségű épület, amely mintha egy meséből lépett volna elő.', fullDesc: 'A Raichle-palota talán a legtöbbet fényképezett épület Szabadkán. Raichle Ferenc építész saját otthonaként és irodájaként építette.', location: 'Raichle Ferenc park 5, Szabadka', tag: 'Művészet', image: '/mesto6.webp' }
       ];
     }
     // Default: Srpski
     return [
       { name: 'Palićko Jezero', desc: 'Simbol regiona, idealno za duge šetnje, vožnju biciklom i potpuno opuštanje pored vode.', fullDesc: 'Palićko jezero je najveće prirodno jezero u Srbiji i prava oaza mira. Okruženo je prelepim šetalištima, starim luksuznim vilama iz perioda secesije i stoletnim parkovima.', location: 'Obala Lajoša Vermeša, Palić', tag: 'Priroda', image: '/mesto1.webp' },
-      { name: 'Zoološki Vrt Palić', desc: 'Prelep park sa bogatom florom i faunom, savršen za porodični izlet i decu svih uzrasta.', fullDesc: 'Zoološki vrt na Paliću nije običan zoološki vrt – on je ujedno i prelep botanički park sa preko 270 vrsta drveća i žbunja.', location: 'Krfska 4, Palić', tag: 'Porodica', image: '/mesto2.jpg' },
-      { name: 'Vinarija Zvonko Bogdan', desc: 'Uživajte u vrhunskim vinima i prelepoj arhitekturi inspirisanoj tradicionalnim panonskim stilom.', fullDesc: 'Smeštena na samo nekoliko stotina metara od jezera, Vinarija Zvonko Bogdan predstavlja spoj najmodernije tehnologije i tradicionalne arhitekture u stilu secesije.', location: 'Kanjiški put 45, Palić', tag: 'Gastronomija', image: '/mesto3.jpg' },
-      { name: 'Gradska Kuća', desc: 'Remek-delo mađarske secesije u samom centru Subotice sa prelepim vidikovcem na vrhu.', fullDesc: 'Simbol Subotice i jedno od najznačajnijih arhitektonskih dela u regionu. Sagrađena početkom 20. veka, bogato je ukrašena Žolnai keramikom, vitražima i drvoredima.', location: 'Trg Slobode 1, Subotica', tag: 'Arhitektura', image: '/mesto4.jpg' },
-      { name: 'Sinagoga', desc: 'Jedna od najlepših i najvećih građevina ovog tipa u Evropi, nedavno potpuno restaurirana.', fullDesc: 'Subotička Sinagoga, izgrađena 1902. godine, druga je po veličini u Evropi. Njena unutrašnjost oduzima dah – obojena je floralnim motivima u stilu mađarske secesije.', location: 'Trg Jakaba i Komora 6, Subotica', tag: 'Kultura', image: '/mesto5.jpg' },
-      { name: 'Palata Rajhl', desc: 'Zgrada nestvarne lepote koja izgleda kao iz bajke, danas dom Savremene galerije Subotice.', fullDesc: 'Palata Rajhl je verovatno najfotografisanija zgrada u Subotici. Izgradio ju je arhitekta Ferenc Rajhl kao svoj dom i arhitektonski biro.', location: 'Park Rajhl Ferenca 5, Subotica', tag: 'Umetnost', image: '/mesto6.jpg' }
+      { name: 'Zoološki Vrt Palić', desc: 'Prelep park sa bogatom florom i faunom, savršen za porodični izlet i decu svih uzrasta.', fullDesc: 'Zoološki vrt na Paliću nije običan zoološki vrt – on je ujedno i prelep botanički park sa preko 270 vrsta drveća i žbunja.', location: 'Krfska 4, Palić', tag: 'Porodica', image: '/mesto2.webp' },
+      { name: 'Vinarija Zvonko Bogdan', desc: 'Uživajte u vrhunskim vinima i prelepoj arhitekturi inspirisanoj tradicionalnim panonskim stilom.', fullDesc: 'Smeštena na samo nekoliko stotina metara od jezera, Vinarija Zvonko Bogdan predstavlja spoj najmodernije tehnologije i tradicionalne arhitekture u stilu secesije.', location: 'Kanjiški put 45, Palić', tag: 'Gastronomija', image: '/mesto3.webp' },
+      { name: 'Gradska Kuća', desc: 'Remek-delo mađarske secesije u samom centru Subotice sa prelepim vidikovcem na vrhu.', fullDesc: 'Simbol Subotice i jedno od najznačajnijih arhitektonskih dela u regionu. Sagrađena početkom 20. veka, bogato je ukrašena Žolnai keramikom, vitražima i drvoredima.', location: 'Trg Slobode 1, Subotica', tag: 'Arhitektura', image: '/mesto4.webp' },
+      { name: 'Sinagoga', desc: 'Jedna od najlepših i najvećih građevina ovog tipa u Evropi, nedavno potpuno restaurirana.', fullDesc: 'Subotička Sinagoga, izgrađena 1902. godine, druga je po veličini u Evropi. Njena unutrašnjost oduzima dah – obojena je floralnim motivima u stilu mađarske secesije.', location: 'Trg Jakaba i Komora 6, Subotica', tag: 'Kultura', image: '/mesto5.webp' },
+      { name: 'Palata Rajhl', desc: 'Zgrada nestvarne lepote koja izgleda kao iz bajke, danas dom Savremene galerije Subotice.', fullDesc: 'Palata Rajhl je verovatno najfotografisanija zgrada u Subotici. Izgradio ju je arhitekta Ferenc Rajhl kao svoj dom i arhitektonski biro.', location: 'Park Rajhl Ferenca 5, Subotica', tag: 'Umetnost', image: '/mesto6.webp' }
     ];
   };
 
@@ -370,7 +381,7 @@ const Guide = ({ lang }) => {
         </div>
       </div>
       {selectedPlace && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-slate-900/70 backdrop-blur-sm animate-fade-in">
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 sm:p-6 bg-slate-900/70 backdrop-blur-sm animate-fade-in">
           <div className="bg-white w-full max-w-3xl rounded-3xl overflow-hidden shadow-2xl relative flex flex-col max-h-[90vh]">
             <button onClick={() => setSelectedPlace(null)} className="absolute top-4 right-4 z-20 bg-black/50 hover:bg-black/80 text-white p-2 rounded-full backdrop-blur-md transition-colors"><svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
             <div className="h-64 sm:h-80 w-full relative shrink-0">
