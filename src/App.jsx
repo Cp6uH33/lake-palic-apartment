@@ -573,7 +573,7 @@ const FloatingChat = () => {
   const phoneNumber = "38162228034";
   const viberNumber = "+38162228034";
   return (
-    <div className="fixed bottom-6 left-6 z-[999] flex flex-col items-center gap-3 pointer-events-none">
+    <div className="fixed bottom-28 left-6 z-[999] flex flex-col items-center gap-3 pointer-events-none">
       <div className={`flex flex-col gap-3 transition-all duration-300 origin-bottom pointer-events-auto ${isOpen ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-75 translate-y-10 pointer-events-none'}`}>
         {/* VIBER */}
         <a
