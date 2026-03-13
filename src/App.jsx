@@ -134,8 +134,9 @@ const Navbar = ({ lang, setLang }) => {
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-slate-900/95 backdrop-blur-md shadow-lg py-4' : 'bg-transparent py-6'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <div className="flex items-center gap-4 sm:gap-8 group">
-          <img src="/logo.webp" alt="Lake Palić Logo" className="h-14 sm:h-16 md:h-20 w-auto group-hover:scale-105 transition-transform duration-300" />
-          <img src="/logo2.webp" alt="Lake Palić Partner Logo" className="h-14 sm:h-16 md:h-20 w-auto group-hover:scale-105 transition-transform duration-300" />
+          {/* ✅ width, height dodati */}
+          <img src="/logo.webp" alt="Lake Palić Logo" width={80} height={80} className="h-14 sm:h-16 md:h-20 w-auto group-hover:scale-105 transition-transform duration-300" />
+          <img src="/logo2.webp" alt="Lake Palić Partner Logo" width={80} height={80} className="h-14 sm:h-16 md:h-20 w-auto group-hover:scale-105 transition-transform duration-300" />
         </div>
         <div className="flex items-center gap-4 sm:gap-6">
           <a href="#smestaj" className="text-slate-200 hover:text-white font-medium text-sm transition hidden md:block">{t.nav_apartments}</a>
@@ -144,13 +145,26 @@ const Navbar = ({ lang, setLang }) => {
           </a>
           <div className="hidden sm:block w-px h-6 bg-white/20"></div>
           <div className="flex items-center gap-2 bg-slate-800/50 backdrop-blur-sm rounded-full p-1 border border-white/10 shadow-inner">
-            <button onClick={() => setLang('sr')} className={`w-8 h-8 rounded-full overflow-hidden flex items-center justify-center transition-all duration-300 ${lang === 'sr' ? 'ring-2 ring-blue-500 ring-offset-2 ring-offset-slate-900 scale-110' : 'opacity-60 hover:opacity-100 hover:scale-105'}`}>
+            {/* ✅ aria-label dodat na sva 3 dugmeta */}
+            <button
+              onClick={() => setLang('sr')}
+              aria-label="Srpski jezik"
+              className={`w-8 h-8 rounded-full overflow-hidden flex items-center justify-center transition-all duration-300 ${lang === 'sr' ? 'ring-2 ring-blue-500 ring-offset-2 ring-offset-slate-900 scale-110' : 'opacity-60 hover:opacity-100 hover:scale-105'}`}
+            >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" className="w-full h-full object-cover"><rect width="3" height="2" fill="#c6363c" /><rect width="3" height="1.333" y="0.667" fill="#0c4076" /><rect width="3" height="0.667" y="1.333" fill="#fff" /></svg>
             </button>
-            <button onClick={() => setLang('en')} className={`w-8 h-8 rounded-full overflow-hidden flex items-center justify-center transition-all duration-300 ${lang === 'en' ? 'ring-2 ring-blue-500 ring-offset-2 ring-offset-slate-900 scale-110' : 'opacity-60 hover:opacity-100 hover:scale-105'}`}>
+            <button
+              onClick={() => setLang('en')}
+              aria-label="English language"
+              className={`w-8 h-8 rounded-full overflow-hidden flex items-center justify-center transition-all duration-300 ${lang === 'en' ? 'ring-2 ring-blue-500 ring-offset-2 ring-offset-slate-900 scale-110' : 'opacity-60 hover:opacity-100 hover:scale-105'}`}
+            >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" className="w-full h-full object-cover"><clipPath id="s"><path d="M0,0 v30 h60 v-30 z" /></clipPath><clipPath id="t"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z" /></clipPath><g clipPath="url(#s)"><path d="M0,0 v30 h60 v-30 z" fill="#012169" /><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" strokeWidth="6" /><path d="M0,0 L60,30 M60,0 L0,30" clipPath="url(#t)" stroke="#C8102E" strokeWidth="4" /><path d="M30,0 v30 M0,15 h60" stroke="#fff" strokeWidth="10" /><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" strokeWidth="6" /></g></svg>
             </button>
-            <button onClick={() => setLang('hu')} className={`w-8 h-8 rounded-full overflow-hidden flex items-center justify-center transition-all duration-300 ${lang === 'hu' ? 'ring-2 ring-blue-500 ring-offset-2 ring-offset-slate-900 scale-110' : 'opacity-60 hover:opacity-100 hover:scale-105'}`}>
+            <button
+              onClick={() => setLang('hu')}
+              aria-label="Magyar nyelv"
+              className={`w-8 h-8 rounded-full overflow-hidden flex items-center justify-center transition-all duration-300 ${lang === 'hu' ? 'ring-2 ring-blue-500 ring-offset-2 ring-offset-slate-900 scale-110' : 'opacity-60 hover:opacity-100 hover:scale-105'}`}
+            >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" className="w-full h-full object-cover"><rect width="3" height="2" fill="#436F4D" /><rect width="3" height="1.333" fill="#FFF" /><rect width="3" height="0.667" fill="#CD2A3E" /></svg>
             </button>
           </div>
@@ -160,13 +174,13 @@ const Navbar = ({ lang, setLang }) => {
   );
 };
 
+
 // ==========================================
 // 2. HERO SEKCIJA (Sa prevedenim recenzijama)
 // ==========================================
 const Hero = ({ lang }) => {
   const t = translations[lang];
 
-  // Funkcija koja vraća recenzije u zavisnosti od izabranog jezika
   const getTestimonials = () => {
     if (lang === 'en') {
       return [
@@ -181,7 +195,6 @@ const Hero = ({ lang }) => {
         { text: "Igazi béke és csend. A házigazdák rendkívül kedvesek és segítőkészek voltak.", author: "Stefan és Ana" }
       ];
     }
-    // Default: Srpski
     return [
       { text: "Apsolutno savršen odmor. Pogled na jezero ostavlja bez daha!", author: "Marko J." },
       { text: "Besprekorno čisto, moderno i na samo minut od vode. Preporuka!", author: "Jelena N." },
@@ -193,7 +206,19 @@ const Hero = ({ lang }) => {
 
   return (
     <header className="relative min-h-[95vh] flex flex-col items-center justify-center w-full overflow-hidden pb-8 pt-24 sm:pt-32">
-      <div className="absolute inset-0 w-full h-full bg-[url('/hero.webp')] bg-cover bg-center bg-no-repeat" style={{ backgroundAttachment: 'fixed' }}></div>
+
+      {/* ✅ IZMENA: <img> umesto CSS background-image, fetchPriority="high" za brzi LCP */}
+      <img
+        src="/hero.webp"
+        alt="Jezero Palić"
+        fetchPriority="high"
+        loading="eager"
+        decoding="async"
+        width={1920}
+        height={1080}
+        className="absolute inset-0 w-full h-full object-cover object-center"
+      />
+
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/80"></div>
 
       <div className="relative z-10 w-full max-w-5xl mx-auto px-6 text-center flex flex-col items-center justify-center h-full">
@@ -204,7 +229,6 @@ const Hero = ({ lang }) => {
           {t.hero_subtitle}
         </p>
 
-        {/* Boks sa recenzijama */}
         <div className="w-full max-w-sm md:max-w-md bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl shadow-2xl mb-10 mx-auto">
           <Swiper modules={[Autoplay]} autoplay={{ delay: 5000, disableOnInteraction: false }} loop={true} allowTouchMove={false} className="w-full">
             {testimonials.map((t_item, index) => (
@@ -217,7 +241,6 @@ const Hero = ({ lang }) => {
                       </svg>
                     ))}
                   </div>
-                  {/* Prikazivanje prevedenog teksta i autora */}
                   <p className="text-white text-sm sm:text-base font-light italic leading-relaxed">
                     "{t_item.text}"
                   </p>
@@ -265,16 +288,15 @@ const Accommodation = ({ lang }) => {
         </div>
       </div>
       <div className="grid lg:grid-cols-2 gap-12">
+
+        {/* ── Apartman 1 ── */}
         <div className="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 flex flex-col">
           <div className="h-72 md:h-80 relative group">
             <Swiper modules={[Navigation, Pagination]} navigation pagination={{ clickable: true }} className="w-full h-full">
-              <SwiperSlide><img src="/PSlika1.webp" className="w-full h-full object-cover" alt="Lake Palić" /></SwiperSlide>
-              <SwiperSlide><img src="/PSlika2.webp" className="w-full h-full object-cover" alt="Lake Palić" /></SwiperSlide>
-              <SwiperSlide><img src="/PSlika6.webp" className="w-full h-full object-cover" alt="Lake Palić" /></SwiperSlide>
-              <SwiperSlide><img src="/PSlika5.webp" className="w-full h-full object-cover" alt="Lake Palić" /></SwiperSlide>
-              <SwiperSlide><img src="/PSlika2.webp" className="w-full h-full object-cover" alt="Lake Palić" /></SwiperSlide>
-              <SwiperSlide><img src="/PSlika6.webp" className="w-full h-full object-cover" alt="Lake Palić" /></SwiperSlide>
-              <SwiperSlide><img src="/PSlika5.webp" className="w-full h-full object-cover" alt="Lake Palić" /></SwiperSlide>
+              <SwiperSlide><img src="/PSlika1.webp" loading="lazy" width={800} height={600} className="w-full h-full object-cover" alt="Lake Palić Apartment - slika 1" /></SwiperSlide>
+              <SwiperSlide><img src="/PSlika2.webp" loading="lazy" width={800} height={600} className="w-full h-full object-cover" alt="Lake Palić Apartment - slika 2" /></SwiperSlide>
+              <SwiperSlide><img src="/PSlika6.webp" loading="lazy" width={800} height={600} className="w-full h-full object-cover" alt="Lake Palić Apartment - slika 3" /></SwiperSlide>
+              <SwiperSlide><img src="/PSlika5.webp" loading="lazy" width={800} height={600} className="w-full h-full object-cover" alt="Lake Palić Apartment - slika 4" /></SwiperSlide>
             </Swiper>
             <div className="absolute top-4 right-4 z-10 bg-white/90 backdrop-blur py-1 px-3 rounded-full text-sm font-bold text-slate-800 shadow-sm">{t.acc_max_people}</div>
           </div>
@@ -288,17 +310,14 @@ const Accommodation = ({ lang }) => {
             </div>
           </div>
         </div>
+
+        {/* ── Apartman 2 ── */}
         <div className="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 flex flex-col">
           <div className="h-72 md:h-80 relative group">
             <Swiper modules={[Navigation, Pagination]} navigation pagination={{ clickable: true }} className="w-full h-full">
-              <SwiperSlide><img src="/RSlika1.webp" className="w-full h-full object-cover" alt="Apartman Rakanović" /></SwiperSlide>
-              <SwiperSlide><img src="/RSlika2.webp" className="w-full h-full object-cover" alt="Apartman Rakanović" /></SwiperSlide>
-              <SwiperSlide><img src="/RSlika3.webp" className="w-full h-full object-cover" alt="Apartman Rakanović" /></SwiperSlide>
-              <SwiperSlide><img src="/RSlika3.webp" className="w-full h-full object-cover" alt="Apartman Rakanović" /></SwiperSlide>
-              <SwiperSlide><img src="/RSlika3.webp" className="w-full h-full object-cover" alt="Apartman Rakanović" /></SwiperSlide>
-              <SwiperSlide><img src="/RSlika3.webp" className="w-full h-full object-cover" alt="Apartman Rakanović" /></SwiperSlide>
-              <SwiperSlide><img src="/RSlika3.webp" className="w-full h-full object-cover" alt="Apartman Rakanović" /></SwiperSlide>
-
+              <SwiperSlide><img src="/RSlika1.webp" loading="lazy" width={800} height={600} className="w-full h-full object-cover" alt="Apartman Rakanović - slika 1" /></SwiperSlide>
+              <SwiperSlide><img src="/RSlika2.webp" loading="lazy" width={800} height={600} className="w-full h-full object-cover" alt="Apartman Rakanović - slika 2" /></SwiperSlide>
+              <SwiperSlide><img src="/RSlika3.webp" loading="lazy" width={800} height={600} className="w-full h-full object-cover" alt="Apartman Rakanović - slika 3" /></SwiperSlide>
             </Swiper>
             <div className="absolute top-4 right-4 z-10 bg-white/90 backdrop-blur py-1 px-3 rounded-full text-sm font-bold text-slate-800 shadow-sm">{t.acc_max_people}</div>
           </div>
@@ -312,6 +331,7 @@ const Accommodation = ({ lang }) => {
             </div>
           </div>
         </div>
+
       </div>
     </section>
   );
@@ -340,11 +360,10 @@ const Guide = ({ lang }) => {
         { name: 'Palicsi Állatkert', desc: 'Gyönyörű park gazdag növény- és állatvilággal, tökéletes családoknak.', fullDesc: 'Nem csak egy hétköznapi állatkert, hanem egy gyönyörű botanikus kert több mint 270 fafajjal.', location: 'Korfu utca 4, Palics', tag: 'Család', image: '/mesto2.webp' },
         { name: 'Zvonko Bogdan Pincészet', desc: 'Élvezze a prémium borokat és a gyönyörű építészetet.', fullDesc: 'Alig néhány száz méterre a tótól, a modern technológia és a hagyományos szecessziós építészet ötvözete.', location: 'Kanizsai út 45, Palics', tag: 'Gasztronómia', image: '/mesto3.webp' },
         { name: 'Városháza', desc: 'A magyar szecesszió remekműve Szabadka központjában.', fullDesc: 'Szabadka szimbóluma és a régió egyik legjelentősebb építészeti alkotása. A 20. század elején épült, Zsolnay kerámiával gazdagon díszítve.', location: 'Szabadság tér 1, Szabadka', tag: 'Építészet', image: '/mesto4.webp' },
-        { name: 'Zsinagóga', desc: 'Európa egyik legszebb és legnagyobb ilyen típusú épülete.', fullDesc: 'Az 1902-ben épült szabadkai zsinagóga Európa második legnagyobbja. Belseje lélegzetelállító – virágmotívumokkal festve.', location: 'Jakab és Komor tér 6, Szabadka', tag: 'Kultúra', image: '/mesto5.jpg' },
+        { name: 'Zsinagóga', desc: 'Európa egyik legszebb és legnagyobb ilyen típusú épülete.', fullDesc: 'Az 1902-ben épült szabadkai zsinagóga Európa második legnagyobbja. Belseje lélegzetelállító – virágmotívumokkal festve.', location: 'Jakab és Komor tér 6, Szabadka', tag: 'Kultúra', image: '/mesto5.webp' },
         { name: 'Raichle-palota', desc: 'Szürreális szépségű épület, amely mintha egy meséből lépett volna elő.', fullDesc: 'A Raichle-palota talán a legtöbbet fényképezett épület Szabadkán. Raichle Ferenc építész saját otthonaként és irodájaként építette.', location: 'Raichle Ferenc park 5, Szabadka', tag: 'Művészet', image: '/mesto6.webp' }
       ];
     }
-    // Default: Srpski
     return [
       { name: 'Palićko Jezero', desc: 'Simbol regiona, idealno za duge šetnje, vožnju biciklom i potpuno opuštanje pored vode.', fullDesc: 'Palićko jezero je najveće prirodno jezero u Srbiji i prava oaza mira. Okruženo je prelepim šetalištima, starim luksuznim vilama iz perioda secesije i stoletnim parkovima.', location: 'Obala Lajoša Vermeša, Palić', tag: 'Priroda', image: '/mesto1.webp' },
       { name: 'Zoološki Vrt Palić', desc: 'Prelep park sa bogatom florom i faunom, savršen za porodični izlet i decu svih uzrasta.', fullDesc: 'Zoološki vrt na Paliću nije običan zoološki vrt – on je ujedno i prelep botanički park sa preko 270 vrsta drveća i žbunja.', location: 'Krfska 4, Palić', tag: 'Porodica', image: '/mesto2.webp' },
@@ -369,7 +388,15 @@ const Guide = ({ lang }) => {
             <div key={index} onClick={() => setSelectedPlace(place)} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 group flex flex-col h-full cursor-pointer">
               <div className="h-56 w-full relative overflow-hidden bg-slate-200">
                 <div className="absolute top-4 left-4 z-10"><span className="text-xs font-bold text-white bg-slate-900/70 backdrop-blur px-3 py-1.5 rounded-full uppercase tracking-wider">{place.tag}</span></div>
-                <img src={place.image} alt={place.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                {/* ✅ loading="lazy", width, height dodati */}
+                <img
+                  src={place.image}
+                  alt={place.name}
+                  loading="lazy"
+                  width={600}
+                  height={400}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
               </div>
               <div className="p-6 flex-1 flex flex-col">
                 <h3 className="font-bold font-serif text-2xl text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">{place.name}</h3>
@@ -380,12 +407,28 @@ const Guide = ({ lang }) => {
           ))}
         </div>
       </div>
+
       {selectedPlace && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-slate-900/70 backdrop-blur-sm animate-fade-in">
           <div className="bg-white w-full max-w-3xl rounded-3xl overflow-hidden shadow-2xl relative flex flex-col max-h-[90vh]">
-            <button onClick={() => setSelectedPlace(null)} className="absolute top-4 right-4 z-20 bg-black/50 hover:bg-black/80 text-white p-2 rounded-full backdrop-blur-md transition-colors"><svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+            {/* ✅ aria-label dodat na close button */}
+            <button
+              onClick={() => setSelectedPlace(null)}
+              aria-label="Zatvori modal"
+              className="absolute top-4 right-4 z-20 bg-black/50 hover:bg-black/80 text-white p-2 rounded-full backdrop-blur-md transition-colors"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
             <div className="h-64 sm:h-80 w-full relative shrink-0">
-              <img src={selectedPlace.image} alt={selectedPlace.name} className="w-full h-full object-cover" />
+              {/* ✅ loading="lazy", width, height dodati na modal sliku */}
+              <img
+                src={selectedPlace.image}
+                alt={selectedPlace.name}
+                loading="lazy"
+                width={800}
+                height={500}
+                className="w-full h-full object-cover"
+              />
               <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black/80 to-transparent"></div>
               <div className="absolute bottom-6 left-6 md:left-10 text-white">
                 <span className="text-xs font-bold text-white bg-blue-600 px-3 py-1 rounded-full uppercase tracking-wider mb-3 inline-block">{selectedPlace.tag}</span>
@@ -418,7 +461,7 @@ const AccordionItem = ({ title, content }) => {
   return (
     <div className="border border-slate-200 rounded-xl mb-4 bg-white overflow-hidden transition-all duration-300 hover:shadow-sm">
       <button onClick={() => setIsOpen(!isOpen)} className="flex w-full justify-between items-center text-left px-6 py-5 focus:outline-none">
-        <h4 className="font-medium text-lg text-slate-800 pr-8">{title}</h4>
+        <h3 className="font-medium text-lg text-slate-800 pr-8">{title}</h3>
         <Plus className={`w-5 h-5 text-slate-500 shrink-0 transition-transform duration-300 ease-in-out ${isOpen ? 'rotate-45' : ''}`} />
       </button>
       <div className={`transition-all duration-300 ease-in-out px-6 ${isOpen ? 'max-h-40 pb-5 opacity-100' : 'max-h-0 py-0 opacity-0'}`}>
