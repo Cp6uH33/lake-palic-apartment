@@ -134,8 +134,8 @@ const Navbar = ({ lang, setLang }) => {
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-slate-900/95 backdrop-blur-md shadow-lg py-4' : 'bg-transparent py-6'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <div className="flex items-center gap-4 sm:gap-8 group">
-          <img src="/logo.png" alt="Lake Palić Logo" className="h-14 sm:h-16 md:h-20 w-auto group-hover:scale-105 transition-transform duration-300" />
-          <img src="/logo2.png" alt="Lake Palić Partner Logo" className="h-14 sm:h-16 md:h-20 w-auto group-hover:scale-105 transition-transform duration-300" />
+          <img src="/logo.webp" alt="Lake Palić Logo" className="h-14 sm:h-16 md:h-20 w-auto group-hover:scale-105 transition-transform duration-300" />
+          <img src="/logo2.webp" alt="Lake Palić Partner Logo" className="h-14 sm:h-16 md:h-20 w-auto group-hover:scale-105 transition-transform duration-300" />
         </div>
         <div className="flex items-center gap-4 sm:gap-6">
           <a href="#smestaj" className="text-slate-200 hover:text-white font-medium text-sm transition hidden md:block">{t.nav_apartments}</a>
