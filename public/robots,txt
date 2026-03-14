@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://lakepalicapartment.netlify.app/sitemap.xml
