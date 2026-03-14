@@ -17,7 +17,7 @@ const translations = {
     hero_subtitle: "Vaš mir, vaš smeštaj",
     btn_book: "Rezervišite odmah",
     acc_title: "Apartmani",
-    acc_desc: "Naši apartmani se nalaze 2 minuta hoda od jezera Palić.", 
+    acc_desc: "Naši apartmani se nalaze na dva minuta hoda od jezera Palić.",
     acc_max_people: "Max 4 osobe",
     acc1_desc: "Moderno opremljen i prostran apartman idealan za parove ili porodice. Nudi maksimalan komfor uz prelepu terasu.",
     acc2_desc: "Vaš dom daleko od kuće. Opremljen svim neophodnim uređajima za duži i bezbrižan boravak u prirodi.",
