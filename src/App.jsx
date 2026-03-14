@@ -295,7 +295,6 @@ const Accommodation = ({ lang }) => {
             <Swiper modules={[Navigation, Pagination]} navigation pagination={{ clickable: true }} className="w-full h-full">
               <SwiperSlide><img src="/PSlika1.webp" loading="lazy" width={800} height={600} className="w-full h-full object-cover" alt="Lake Palić Apartment - slika 1" /></SwiperSlide>
               <SwiperSlide><img src="/PSlika2.webp" loading="lazy" width={800} height={600} className="w-full h-full object-cover" alt="Lake Palić Apartment - slika 2" /></SwiperSlide>
-              <SwiperSlide><img src="/PSlika6.webp" loading="lazy" width={800} height={600} className="w-full h-full object-cover" alt="Lake Palić Apartment - slika 3" /></SwiperSlide>
               <SwiperSlide><img src="/PSlika5.webp" loading="lazy" width={800} height={600} className="w-full h-full object-cover" alt="Lake Palić Apartment - slika 4" /></SwiperSlide>
             </Swiper>
             <div className="absolute top-4 right-4 z-10 bg-white/90 backdrop-blur py-1 px-3 rounded-full text-sm font-bold text-slate-800 shadow-sm">{t.acc_max_people}</div>
@@ -315,9 +314,17 @@ const Accommodation = ({ lang }) => {
         <div className="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 flex flex-col">
           <div className="h-72 md:h-80 relative group">
             <Swiper modules={[Navigation, Pagination]} navigation pagination={{ clickable: true }} className="w-full h-full">
-              <SwiperSlide><img src="/RSlika1.webp" loading="lazy" width={800} height={600} className="w-full h-full object-cover" alt="Apartman Rakanović - slika 1" /></SwiperSlide>
-              <SwiperSlide><img src="/RSlika2.webp" loading="lazy" width={800} height={600} className="w-full h-full object-cover" alt="Apartman Rakanović - slika 2" /></SwiperSlide>
-              <SwiperSlide><img src="/RSlika3.webp" loading="lazy" width={800} height={600} className="w-full h-full object-cover" alt="Apartman Rakanović - slika 3" /></SwiperSlide>
+              <SwiperSlide><img src="/Rslika1.webp" loading="lazy" width={800} height={600} className="w-full h-full object-cover" alt="Apartman Rakanović - slika 1" /></SwiperSlide>
+              <SwiperSlide><img src="/Rslika3.webp" loading="lazy" width={800} height={600} className="w-full h-full object-cover" alt="Apartman Rakanović - slika 3" /></SwiperSlide>
+              <SwiperSlide><img src="/Rslika4.webp" loading="lazy" width={800} height={600} className="w-full h-full object-cover" alt="Apartman Rakanović - slika 3" /></SwiperSlide>
+              <SwiperSlide><img src="/Rslika7.webp" loading="lazy" width={800} height={600} className="w-full h-full object-cover" alt="Apartman Rakanović - slika 3" /></SwiperSlide>
+              <SwiperSlide><img src="/Rslika6.webp" loading="lazy" width={800} height={600} className="w-full h-full object-cover" alt="Apartman Rakanović - slika 3" /></SwiperSlide>
+              <SwiperSlide><img src="/Rslika5.webp" loading="lazy" width={800} height={600} className="w-full h-full object-cover" alt="Apartman Rakanović - slika 3" /></SwiperSlide>
+              <SwiperSlide><img src="/Rslika8.webp" loading="lazy" width={800} height={600} className="w-full h-full object-cover" alt="Apartman Rakanović - slika 3" /></SwiperSlide>
+              <SwiperSlide><img src="/Rslika9.webp" loading="lazy" width={800} height={600} className="w-full h-full object-cover" alt="Apartman Rakanović - slika 3" /></SwiperSlide>
+              <SwiperSlide><img src="/Rslika10.webp" loading="lazy" width={800} height={600} className="w-full h-full object-cover" alt="Apartman Rakanović - slika 3" /></SwiperSlide>
+
+
             </Swiper>
             <div className="absolute top-4 right-4 z-10 bg-white/90 backdrop-blur py-1 px-3 rounded-full text-sm font-bold text-slate-800 shadow-sm">{t.acc_max_people}</div>
           </div>
