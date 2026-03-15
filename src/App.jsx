@@ -131,16 +131,15 @@ const Navbar = ({ lang, setLang }) => {
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-slate-900/95 backdrop-blur-md shadow-lg py-4' : 'bg-transparent py-6'}`}>
+    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-[#2B2118]/80 backdrop-blur-md shadow-lg py-4' : 'bg-transparent py-6'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <div className="flex items-center gap-4 sm:gap-8 group">
           {/* ✅ width, height dodati */}
-          <img src="/logo.webp" alt="Lake Palić Logo" width={80} height={80} className="h-14 sm:h-16 md:h-20 w-auto group-hover:scale-105 transition-transform duration-300" />
-          <img src="/logo2.webp" alt="Lake Palić Partner Logo" width={80} height={80} className="h-14 sm:h-16 md:h-20 w-auto group-hover:scale-105 transition-transform duration-300" />
+          <img src="/logo.webp" alt="Lake Palić Apartment,Apartman Rakanovic Logo" width={80} height={80} className="h-14 sm:h-16 md:h-20 w-auto group-hover:scale-105 transition-transform duration-300" />
         </div>
         <div className="flex items-center gap-4 sm:gap-6">
-          <a href="#smestaj" className="text-slate-200 hover:text-white font-medium text-sm transition hidden md:block">{t.nav_apartments}</a>
-          <a href="#rezervacija" className="bg-blue-600 hover:bg-blue-500 text-white px-5 sm:px-6 py-2 sm:py-2.5 rounded-full font-bold text-sm transition-all shadow-md hidden sm:block">
+          <a href="#smestaj" className="text-slate-200 hover:text-[#fffeeb] font-medium text-sm transition hidden md:block">{t.nav_apartments}</a>
+          <a href="#rezervacija" className="bg-transparent hover:bg-[#FFD700]/20 text-[#fffeeb] px-5 sm:px-6 py-2 sm:py-2.5 rounded-full font-bold text-sm transition-all shadow-md hidden sm:block border-2 border-[#FFD700]">
             {t.nav_contact}
           </a>
           <div className="hidden sm:block w-px h-6 bg-white/20"></div>
@@ -149,21 +148,21 @@ const Navbar = ({ lang, setLang }) => {
             <button
               onClick={() => setLang('sr')}
               aria-label="Srpski jezik"
-              className={`w-8 h-8 rounded-full overflow-hidden flex items-center justify-center transition-all duration-300 ${lang === 'sr' ? 'ring-2 ring-blue-500 ring-offset-2 ring-offset-slate-900 scale-110' : 'opacity-60 hover:opacity-100 hover:scale-105'}`}
+              className={`w-8 h-8 rounded-full overflow-hidden flex items-center justify-center transition-all duration-300 ${lang === 'sr' ? 'ring-2 ring-[#FFD700] ring-offset-2 ring-offset-slate-900 scale-110' : 'opacity-60 hover:opacity-100 hover:scale-105'}`}
             >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" className="w-full h-full object-cover"><rect width="3" height="2" fill="#c6363c" /><rect width="3" height="1.333" y="0.667" fill="#0c4076" /><rect width="3" height="0.667" y="1.333" fill="#fff" /></svg>
             </button>
             <button
               onClick={() => setLang('en')}
               aria-label="English language"
-              className={`w-8 h-8 rounded-full overflow-hidden flex items-center justify-center transition-all duration-300 ${lang === 'en' ? 'ring-2 ring-blue-500 ring-offset-2 ring-offset-slate-900 scale-110' : 'opacity-60 hover:opacity-100 hover:scale-105'}`}
+              className={`w-8 h-8 rounded-full overflow-hidden flex items-center justify-center transition-all duration-300 ${lang === 'en' ? 'ring-2 ring-[#FFD700] ring-offset-2 ring-offset-slate-900 scale-110' : 'opacity-60 hover:opacity-100 hover:scale-105'}`}
             >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" className="w-full h-full object-cover"><clipPath id="s"><path d="M0,0 v30 h60 v-30 z" /></clipPath><clipPath id="t"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z" /></clipPath><g clipPath="url(#s)"><path d="M0,0 v30 h60 v-30 z" fill="#012169" /><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" strokeWidth="6" /><path d="M0,0 L60,30 M60,0 L0,30" clipPath="url(#t)" stroke="#C8102E" strokeWidth="4" /><path d="M30,0 v30 M0,15 h60" stroke="#fff" strokeWidth="10" /><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" strokeWidth="6" /></g></svg>
             </button>
             <button
               onClick={() => setLang('hu')}
               aria-label="Magyar nyelv"
-              className={`w-8 h-8 rounded-full overflow-hidden flex items-center justify-center transition-all duration-300 ${lang === 'hu' ? 'ring-2 ring-blue-500 ring-offset-2 ring-offset-slate-900 scale-110' : 'opacity-60 hover:opacity-100 hover:scale-105'}`}
+              className={`w-8 h-8 rounded-full overflow-hidden flex items-center justify-center transition-all duration-300 ${lang === 'hu' ? 'ring-2 ring-[#FFD700] ring-offset-2 ring-offset-slate-900 scale-110' : 'opacity-60 hover:opacity-100 hover:scale-105'}`}
             >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" className="w-full h-full object-cover"><rect width="3" height="2" fill="#436F4D" /><rect width="3" height="1.333" fill="#FFF" /><rect width="3" height="0.667" fill="#CD2A3E" /></svg>
             </button>
@@ -207,7 +206,6 @@ const Hero = ({ lang }) => {
   return (
     <header className="relative min-h-[95vh] flex flex-col items-center justify-center w-full overflow-hidden pb-8 pt-24 sm:pt-32">
 
-      {/* ✅ IZMENA: <img> umesto CSS background-image, fetchPriority="high" za brzi LCP */}
       <img
         src="/hero.webp"
         alt="Jezero Palić"
@@ -221,50 +219,56 @@ const Hero = ({ lang }) => {
 
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/80"></div>
 
+      {/* Centralni sadržaj — naslov i dugme */}
       <div className="relative z-10 w-full max-w-5xl mx-auto px-6 text-center flex flex-col items-center justify-center h-full">
-        <h1 className="text-6xl sm:text-7xl md:text-8xl font-serif font-bold text-white mb-4 leading-tight drop-shadow-2xl">
+        <h1 className="text-6xl sm:text-7xl md:text-8xl font-serif font-bold text-[#fffeeb] mb-4 leading-tight drop-shadow-2xl">
           {t.hero_title}
         </h1>
-        <p className="text-white uppercase tracking-[0.2em] sm:tracking-[0.3em] font-light text-base md:text-2xl mb-10 drop-shadow-lg animate-bounce-in">
+        <p className="text-[#fffeeb] uppercase tracking-[0.2em] sm:tracking-[0.3em] font-light text-base md:text-2xl mb-10 drop-shadow-lg animate-bounce-in">
           {t.hero_subtitle}
         </p>
 
-        <div className="w-full max-w-sm md:max-w-md bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl shadow-2xl mb-10 mx-auto">
-          <Swiper modules={[Autoplay]} autoplay={{ delay: 5000, disableOnInteraction: false }} loop={true} allowTouchMove={false} className="w-full">
-            {testimonials.map((t_item, index) => (
-              <SwiperSlide key={index}>
-                <div className="flex flex-col items-center text-center gap-3">
-                  <div className="flex gap-1 justify-center">
-                    {[...Array(5)].map((_, i) => (
-                      <svg key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400 drop-shadow-md" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                    ))}
-                  </div>
-                  <p className="text-white text-sm sm:text-base font-light italic leading-relaxed">
-                    "{t_item.text}"
-                  </p>
-                  <p className="text-white/70 text-xs font-medium uppercase tracking-wider">
-                    - {t_item.author}
-                  </p>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-
-        <a href="#rezervacija" className="group flex items-center bg-white/10 backdrop-blur-md hover:bg-white transition-all duration-300 rounded-full pl-6 pr-2 py-2 border border-white/30 hover:border-white shadow-xl">
-          <span className="font-medium text-white group-hover:text-slate-900 transition-colors duration-300 mr-4 text-sm sm:text-base">
+        <a href="#rezervacija" className="group flex items-center bg-[#FFD700]/20 hover:bg-transparent transition-all duration-300 rounded-full pl-6 pr-2 py-2 border border-[#FFD700] hover:border-[#FFD700] shadow-xl">
+          <span className="font-medium text-[#fffeeb] group-hover:text-[#fffeeb] transition-colors duration-300 mr-4 text-sm sm:text-base">
             {t.btn_book}
           </span>
-          <div className="w-10 h-10 bg-white group-hover:bg-slate-900 rounded-full flex items-center justify-center transition-colors duration-300">
-            <ArrowUpRight className="w-5 h-5 text-slate-900 group-hover:text-white transition-transform duration-300 ease-in-out group-hover:rotate-45" />
+          <div className="w-10 h-10 bg-transparent group-hover: border border-[#FFD700] rounded-full flex items-center justify-center transition-colors duration-300">
+            <ArrowUpRight className="w-5 h-5 transition-transform duration-300 ease-in-out group-hover:rotate-45" style={{ color: '#fffeeb' }} />
           </div>
         </a>
+
+
       </div>
+
+      {/* Recenzije — donji desni ugao*/}
+      <div className="block absolute bottom-8 right-10 z-10 w-80 bg-white/10 backdrop-blur-md border border-white/20 p-5 rounded-2xl shadow-2xl">
+        <Swiper modules={[Autoplay]} autoplay={{ delay: 5000, disableOnInteraction: false }} loop={true} allowTouchMove={false} className="w-full">
+          {testimonials.map((t_item, index) => (
+            <SwiperSlide key={index}>
+              <div className="flex flex-col items-center text-center gap-3">
+                <div className="flex gap-1 justify-center">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-4 h-4 drop-shadow-md" style={{ color: '#FFD700', fill: '#FFD700' }} viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="text-[#fffeeb] text-sm font-light italic leading-relaxed">
+                  "{t_item.text}"
+                </p>
+                <p className="text-xs font-medium uppercase tracking-wider text-[#fffeeb]" >
+                  {t_item.author}
+                </p>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+
     </header>
   );
 };
+
 
 
 // ==========================================
@@ -280,65 +284,65 @@ const Accommodation = ({ lang }) => {
   ];
 
   return (
-    <section className="py-24 px-6 max-w-7xl mx-auto" id="smestaj">
-      <div className="mb-16 md:flex justify-between items-end">
-        <div>
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-4">{t.acc_title}</h2>
-          <p className="text-slate-500 text-lg">{t.acc_desc}</p>
-        </div>
-      </div>
-      <div className="grid lg:grid-cols-2 gap-12">
-
-        {/* ── Apartman 1 ── */}
-        <div className="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 flex flex-col">
-          <div className="h-72 md:h-80 relative group">
-            <Swiper modules={[Navigation, Pagination]} navigation pagination={{ clickable: true }} className="w-full h-full">
-              <SwiperSlide><img src="/PSlika1.webp" loading="lazy" width={800} height={600} className="w-full h-full object-cover" alt="Dnevna soba apartmana Lake Palić Apartment na Paliću" /></SwiperSlide>
-              <SwiperSlide><img src="/PSlika2.webp" loading="lazy" width={800} height={600} className="w-full h-full object-cover" alt="Dnevna soba apartmana Lake Palić Apartment na Paliću" /></SwiperSlide>
-              <SwiperSlide><img src="/PSlika5.webp" loading="lazy" width={800} height={600} className="w-full h-full object-cover" alt="Dnevna soba apartmana Lake Palić Apartment na Paliću"/></SwiperSlide>
-            </Swiper>
-            <div className="absolute top-4 right-4 z-10 bg-white/90 backdrop-blur py-1 px-3 rounded-full text-sm font-bold text-slate-800 shadow-sm">{t.acc_max_people}</div>
-          </div>
-          <div className="p-8 flex-1 flex flex-col justify-between">
-            <div>
-              <h3 className="text-3xl font-serif font-bold text-slate-900 mb-4">Lake Palić Apartment</h3>
-              <p className="text-slate-600 leading-relaxed mb-6">{t.acc1_desc}</p>
-            </div>
-            <div className="grid grid-cols-2 gap-4 pt-6 border-t border-gray-100">
-              {amenities.map((item, i) => (<div key={i} className="flex items-center text-slate-700 text-sm"><span className="text-blue-600 mr-2">{item.icon}</span> {item.text}</div>))}
-            </div>
+    <section className="py-24 bg-[#FFFDD0]" id="smestaj">
+      <div className="px-6 max-w-7xl mx-auto">
+        <div className="mb-16 md:flex justify-between items-end">
+          <div>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#2B2118] mb-4">{t.acc_title}</h2>
+            <p className="text-[#2B2118] text-lg">{t.acc_desc}</p>
           </div>
         </div>
+        <div className="grid lg:grid-cols-2 gap-12">
 
-        {/* ── Apartman 2 ── */}
-        <div className="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 flex flex-col">
-          <div className="h-72 md:h-80 relative group">
-            <Swiper modules={[Navigation, Pagination]} navigation pagination={{ clickable: true }} className="w-full h-full">
-              <SwiperSlide><img src="/Rslika1.webp" loading="lazy" width={800} height={600} className="w-full h-full object-cover" alt="Dnevna soba apartmana Rakanović blizu jezera Palić" /></SwiperSlide>
-              <SwiperSlide><img src="/Rslika3.webp" loading="lazy" width={800} height={600} className="w-full h-full object-cover" alt="Dnevna soba apartmana Rakanović blizu jezera Palić"/></SwiperSlide>
-              <SwiperSlide><img src="/Rslika4.webp" loading="lazy" width={800} height={600} className="w-full h-full object-cover" alt="Dnevna soba apartmana Rakanović blizu jezera Palić"/></SwiperSlide>
-              <SwiperSlide><img src="/Rslika7.webp" loading="lazy" width={800} height={600} className="w-full h-full object-cover" alt="Spavaća soba apartmana Rakanović blizu jezera Palić" /></SwiperSlide>
-              <SwiperSlide><img src="/Rslika6.webp" loading="lazy" width={800} height={600} className="w-full h-full object-cover" alt="Spavaća soba apartmana Rakanović blizu jezera Palić" /></SwiperSlide>
-              <SwiperSlide><img src="/Rslika5.webp" loading="lazy" width={800} height={600} className="w-full h-full object-cover" alt="Spavaća soba apartmana Rakanović blizu jezera Palić"/></SwiperSlide>
-              <SwiperSlide><img src="/Rslika8.webp" loading="lazy" width={800} height={600} className="w-full h-full object-cover" alt="Kuhinja apartmana Rakanović blizu jezera Palić"/></SwiperSlide>
-              <SwiperSlide><img src="/Rslika9.webp" loading="lazy" width={800} height={600} className="w-full h-full object-cover" alt="Kuhinja apartmana Rakanović blizu jezera Palić"/></SwiperSlide>
-              <SwiperSlide><img src="/Rslika10.webp" loading="lazy" width={800} height={600} className="w-full h-full object-cover" alt="Kupatilo apartmana Rakanović blizu jezera Palić"/></SwiperSlide>
-
-
-            </Swiper>
-            <div className="absolute top-4 right-4 z-10 bg-white/90 backdrop-blur py-1 px-3 rounded-full text-sm font-bold text-slate-800 shadow-sm">{t.acc_max_people}</div>
-          </div>
-          <div className="p-8 flex-1 flex flex-col justify-between">
-            <div>
-              <h3 className="text-3xl font-serif font-bold text-slate-900 mb-4">Apartman Rakanović</h3>
-              <p className="text-slate-600 leading-relaxed mb-6">{t.acc2_desc}</p>
+          {/* ── Apartman 1 ── */}
+          <div className="bg-[#fffeeb] rounded-3xl overflow-hidden shadow-lg border border-gray-100 flex flex-col">
+            <div className="h-72 md:h-80 relative group">
+              <Swiper modules={[Navigation, Pagination]} navigation pagination={{ clickable: true }} loop={true} className="w-full h-full">
+                <SwiperSlide><img src="/PSlika1.webp" loading="lazy" width={800} height={600} className="w-full h-full object-cover" alt="Dnevna soba apartmana Lake Palić Apartment na Paliću" /></SwiperSlide>
+                <SwiperSlide><img src="/PSlika2.webp" loading="lazy" width={800} height={600} className="w-full h-full object-cover" alt="Dnevna soba apartmana Lake Palić Apartment na Paliću" /></SwiperSlide>
+                <SwiperSlide><img src="/PSlika5.webp" loading="lazy" width={800} height={600} className="w-full h-full object-cover" alt="Dnevna soba apartmana Lake Palić Apartment na Paliću" /></SwiperSlide>
+              </Swiper>
+              <div className="absolute top-4 right-4 z-10 bg-[#fffeeb] backdrop-blur py-1 px-3 rounded-full text-sm font-bold text-[#2B2118] shadow-sm">{t.acc_max_people}</div>
             </div>
-            <div className="grid grid-cols-2 gap-4 pt-6 border-t border-gray-100">
-              {amenities.map((item, i) => (<div key={i} className="flex items-center text-slate-700 text-sm"><span className="text-blue-600 mr-2">{item.icon}</span> {item.text}</div>))}
+            <div className="p-8 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 className="text-3xl font-serif font-bold text-[#2B2118] mb-4">Lake Palić Apartment</h3>
+                <p className="text-[#2B2118]/70 leading-relaxed mb-6">{t.acc1_desc}</p>
+              </div>
+              <div className="grid grid-cols-2 gap-4 pt-6 border-t border-gray-100">
+                {amenities.map((item, i) => (<div key={i} className="flex items-center text-[#2B2118]/70 text-sm"><span className="text-[#2B2118]/70 mr-2">{item.icon}</span> {item.text}</div>))}
+              </div>
             </div>
           </div>
+
+          {/* ── Apartman 2 ── */}
+          <div className="bg-[#fffeeb] rounded-3xl overflow-hidden shadow-lg border border-gray-100 flex flex-col">
+            <div className="h-72 md:h-80 relative group">
+              <Swiper modules={[Navigation, Pagination]} navigation pagination={{ clickable: true }} loop={true} className="w-full h-full">
+                <SwiperSlide><img src="/Rslika1.webp" loading="lazy" width={800} height={600} className="w-full h-full object-cover" alt="Dnevna soba apartmana Rakanović blizu jezera Palić" /></SwiperSlide>
+                <SwiperSlide><img src="/Rslika3.webp" loading="lazy" width={800} height={600} className="w-full h-full object-cover" alt="Dnevna soba apartmana Rakanović blizu jezera Palić" /></SwiperSlide>
+                <SwiperSlide><img src="/Rslika4.webp" loading="lazy" width={800} height={600} className="w-full h-full object-cover" alt="Dnevna soba apartmana Rakanović blizu jezera Palić" /></SwiperSlide>
+                <SwiperSlide><img src="/Rslika7.webp" loading="lazy" width={800} height={600} className="w-full h-full object-cover" alt="Spavaća soba apartmana Rakanović blizu jezera Palić" /></SwiperSlide>
+                <SwiperSlide><img src="/Rslika6.webp" loading="lazy" width={800} height={600} className="w-full h-full object-cover" alt="Spavaća soba apartmana Rakanović blizu jezera Palić" /></SwiperSlide>
+                <SwiperSlide><img src="/Rslika5.webp" loading="lazy" width={800} height={600} className="w-full h-full object-cover" alt="Spavaća soba apartmana Rakanović blizu jezera Palić" /></SwiperSlide>
+                <SwiperSlide><img src="/Rslika8.webp" loading="lazy" width={800} height={600} className="w-full h-full object-cover" alt="Kuhinja apartmana Rakanović blizu jezera Palić" /></SwiperSlide>
+                <SwiperSlide><img src="/Rslika9.webp" loading="lazy" width={800} height={600} className="w-full h-full object-cover" alt="Kuhinja apartmana Rakanović blizu jezera Palić" /></SwiperSlide>
+                <SwiperSlide><img src="/Rslika10.webp" loading="lazy" width={800} height={600} className="w-full h-full object-cover" alt="Kupatilo apartmana Rakanović blizu jezera Palić" /></SwiperSlide>
+              </Swiper>
+              <div className="absolute top-4 right-4 z-10 bg-[#fffeeb] backdrop-blur py-1 px-3 rounded-full text-sm font-bold text-[#2B2118] shadow-sm">{t.acc_max_people}</div>
+            </div>
+            <div className="p-8 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 className="text-3xl font-serif font-bold text-[#2B2118] mb-4">Apartman Rakanović</h3>
+                <p className="text-[#2B2118]/70 leading-relaxed mb-6">{t.acc2_desc}</p>
+              </div>
+              <div className="grid grid-cols-2 gap-4 pt-6 border-t border-gray-100">
+                {amenities.map((item, i) => (<div key={i} className="flex items-center text-[#2B2118]/70 text-sm"><span className="text-[#2B2118]/70 mr-2">{item.icon}</span> {item.text}</div>))}
+              </div>
+            </div>
+          </div>
+
         </div>
-
       </div>
     </section>
   );
@@ -384,17 +388,17 @@ const Guide = ({ lang }) => {
   const places = getPlaces();
 
   return (
-    <section className="bg-slate-50 py-24 px-6 relative">
+    <section className="bg-[#FFFDD0] py-24 px-6 relative">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-4">{t.guide_title}</h2>
-          <div className="w-24 h-1 bg-blue-600 mx-auto rounded-full mb-6"></div>
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#2B2118] mb-4">{t.guide_title}</h2>
+          <div className="w-24 h-1 bg-[#2B2118] mx-auto rounded-full mb-6"></div>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {places.map((place, index) => (
-            <div key={index} onClick={() => setSelectedPlace(place)} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 group flex flex-col h-full cursor-pointer">
+            <div key={index} onClick={() => setSelectedPlace(place)} className="bg-[#fffeeb] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 group flex flex-col h-full cursor-pointer">
               <div className="h-56 w-full relative overflow-hidden bg-slate-200">
-                <div className="absolute top-4 left-4 z-10"><span className="text-xs font-bold text-white bg-slate-900/70 backdrop-blur px-3 py-1.5 rounded-full uppercase tracking-wider">{place.tag}</span></div>
+                <div className="absolute top-4 left-4 z-10"><span className="text-xs font-bold text-[#2B2118] bg-[#FFD700] backdrop-blur px-3 py-1.5 rounded-full uppercase tracking-wider">{place.tag}</span></div>
                 {/* ✅ loading="lazy", width, height dodati */}
                 <img
                   src={place.image}
@@ -406,9 +410,9 @@ const Guide = ({ lang }) => {
                 />
               </div>
               <div className="p-6 flex-1 flex flex-col">
-                <h3 className="font-bold font-serif text-2xl text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">{place.name}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed mb-4 flex-1">{place.desc}</p>
-                <div className="mt-auto pt-4 border-t border-slate-100 flex items-center text-blue-600 text-sm font-semibold group-hover:gap-2 transition-all">{t.guide_btn} <span className="ml-1 transition-transform duration-300 group-hover:translate-x-1">→</span></div>
+                <h3 className="font-bold font-serif text-2xl text-[#2B2118] mb-3 group-hover:text-[#2B2118]/50 transition-colors">{place.name}</h3>
+                <p className="text-[#2B2118] text-sm leading-relaxed mb-4 flex-1">{place.desc}</p>
+                <div className="mt-auto pt-4 border-t border-slate-100 flex items-center text-[#2B2118] text-sm font-semibold group-hover:gap-2 transition-all">{t.guide_btn} <span className="ml-1 transition-transform duration-300 group-hover:translate-x-1">→</span></div>
               </div>
             </div>
           ))}
@@ -417,7 +421,7 @@ const Guide = ({ lang }) => {
 
       {selectedPlace && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-slate-900/70 backdrop-blur-sm animate-fade-in">
-          <div className="bg-white w-full max-w-3xl rounded-3xl overflow-hidden shadow-2xl relative flex flex-col max-h-[90vh]">
+          <div className="bg-[#fffeeb] w-full max-w-3xl rounded-3xl overflow-hidden shadow-2xl relative flex flex-col max-h-[90vh]">
             {/* ✅ aria-label dodat na close button */}
             <button
               onClick={() => setSelectedPlace(null)}
@@ -438,17 +442,17 @@ const Guide = ({ lang }) => {
               />
               <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black/80 to-transparent"></div>
               <div className="absolute bottom-6 left-6 md:left-10 text-white">
-                <span className="text-xs font-bold text-white bg-blue-600 px-3 py-1 rounded-full uppercase tracking-wider mb-3 inline-block">{selectedPlace.tag}</span>
+                <span className="text-xs font-bold text-[#2B2118] bg-[#FFD700] px-3 py-1 rounded-full uppercase tracking-wider mb-3 inline-block">{selectedPlace.tag}</span>
                 <h3 className="text-4xl md:text-5xl font-serif font-bold">{selectedPlace.name}</h3>
               </div>
             </div>
             <div className="p-6 md:p-10 overflow-y-auto">
-              <div className="flex items-center text-slate-500 font-medium mb-6 bg-slate-50 p-4 rounded-xl border border-slate-100">
-                <MapPin className="w-5 h-5 text-blue-600 mr-3" /><span>{selectedPlace.location}</span>
-                <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(selectedPlace.name + ' ' + selectedPlace.location)}`} target="_blank" rel="noreferrer" className="ml-auto text-sm text-blue-600 hover:underline font-semibold">{t.guide_modal_map}</a>
+              <div className="flex items-center text-[#2B2118] font-medium mb-6 bg-[#fffeeb] p-4 rounded-xl border border-[#FFD700]">
+                <MapPin className="w-5 h-5 text-[#2B2118] mr-3" /><span>{selectedPlace.location}</span>
+                <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(selectedPlace.name + ' ' + selectedPlace.location)}`} target="_blank" rel="noreferrer" className="ml-auto text-sm text-[#2B2118] hover:underline font-semibold">{t.guide_modal_map}</a>
               </div>
-              <h4 className="text-xl font-bold text-slate-900 mb-3">{t.guide_modal_about}</h4>
-              <p className="text-slate-600 leading-relaxed text-lg">{selectedPlace.fullDesc}</p>
+              <h4 className="text-xl font-bold text-[#2B2118] mb-3">{t.guide_modal_about}</h4>
+              <p className="text-[#2B2118] leading-relaxed text-lg">{selectedPlace.fullDesc}</p>
             </div>
           </div>
         </div>
@@ -462,23 +466,23 @@ const Guide = ({ lang }) => {
 // 5. FAQ SEKCIJA
 // ==========================================
 
-// OVAJ DEO STE VEROVATNO IZGUBILI (AccordionItem)
+// (AccordionItem)
 const AccordionItem = ({ title, content }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="border border-slate-200 rounded-xl mb-4 bg-white overflow-hidden transition-all duration-300 hover:shadow-sm">
+    <div className="border border-slate-200 rounded-xl mb-4 bg-[#fffeeb] overflow-hidden transition-all duration-300 hover:shadow-sm">
       <button onClick={() => setIsOpen(!isOpen)} className="flex w-full justify-between items-center text-left px-6 py-5 focus:outline-none">
-        <h3 className="font-medium text-lg text-slate-800 pr-8">{title}</h3>
-        <Plus className={`w-5 h-5 text-slate-500 shrink-0 transition-transform duration-300 ease-in-out ${isOpen ? 'rotate-45' : ''}`} />
+        <h3 className="font-medium text-lg text-[#2B2118] pr-8">{title}</h3>
+        <Plus className={`w-5 h-5 text-[#2B2118] shrink-0 transition-transform duration-300 ease-in-out ${isOpen ? 'rotate-45' : ''}`} />
       </button>
       <div className={`transition-all duration-300 ease-in-out px-6 ${isOpen ? 'max-h-40 pb-5 opacity-100' : 'max-h-0 py-0 opacity-0'}`}>
-        <p className="text-slate-600 text-sm leading-relaxed">{content}</p>
+        <p className="text-[#2B2118] text-sm leading-relaxed">{content}</p>
       </div>
     </div>
   );
 };
 
-// OVAJ DEO JE PUNA FAQ SEKCIJA (Sa 6 pitanja)
+// FAQ SEKCIJA (Sa 6 pitanja)
 const FAQ = ({ lang }) => {
   const t = translations[lang];
 
@@ -502,7 +506,6 @@ const FAQ = ({ lang }) => {
         { q: "Biztosítanak ágyneműt és törölközőt?", a: "Igen, tiszta ágynemű, törölközők és alapvető kozmetikumok (sampon, szappan) várják Önt az apartmanban." }
       ];
     }
-    // Default: Srpski
     return [
       { q: "Koji su načini plaćanja?", a: "Plaćanje se vrši prilikom dolaska u apartman u gotovini, ili unapred uplatom na tekući račun. Uskoro uvodimo i plaćanje karticama." },
       { q: "Da li je moguće otkazati ili promeniti rezervaciju?", a: "Da, rezervaciju je moguće besplatno otkazati do 7 dana pre planiranog dolaska. Nakon tog perioda zadržavamo depozit." },
@@ -516,19 +519,23 @@ const FAQ = ({ lang }) => {
   const faqs = getFaqs();
 
   return (
-    <section className="py-24 px-6 max-w-7xl mx-auto">
-      <div className="grid lg:grid-cols-12 gap-16 lg:gap-8">
-        <div className="lg:col-span-5 flex flex-col items-start">
-          <span className="bg-slate-800 text-white text-xs font-semibold px-3 py-1 rounded-full mb-6">{t.faq_badge}</span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-slate-900 mb-6 leading-tight whitespace-pre-line">{t.faq_title}</h2>
-          <p className="text-slate-600 text-lg mb-10 max-w-md">{t.faq_desc}</p>
-          <a href="#rezervacija" className="group flex items-center bg-slate-100 hover:bg-slate-900 transition-colors duration-300 rounded-full pl-6 pr-2 py-2">
-            <span className="font-medium text-slate-800 group-hover:text-white transition-colors duration-300 mr-4">{t.btn_contact}</span>
-            <div className="w-10 h-10 bg-slate-900 group-hover:bg-white rounded-full flex items-center justify-center transition-colors duration-300"><ArrowUpRight className="w-5 h-5 text-white group-hover:text-slate-900 transition-transform duration-300 ease-in-out group-hover:rotate-45" /></div>
-          </a>
-        </div>
-        <div className="lg:col-span-7">
-          {faqs.map((faq, idx) => (<AccordionItem key={idx} title={faq.q} content={faq.a} />))}
+    <section className="py-24 bg-[#FFFDD0]">
+      <div className="px-6 max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-12 gap-16 lg:gap-8">
+          <div className="lg:col-span-5 flex flex-col items-start">
+            <span className="bg-[#FFD700] text-[#2B2118] text-xs font-semibold px-3 py-1 rounded-full mb-6">{t.faq_badge}</span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-[#2B2118] mb-6 leading-tight whitespace-pre-line">{t.faq_title}</h2>
+            <p className="text-[#2B2118] text-lg mb-10 max-w-md">{t.faq_desc}</p>
+            <a href="#rezervacija" className="group flex items-center bg-transparent border border-[#FFD700] hover:bg-[#2B2118] transition-colors duration-300 rounded-full pl-6 pr-2 py-2">
+              <span className="font-medium text-[#2B2118] group-hover:text-white transition-colors duration-300 mr-4">{t.btn_contact}</span>
+              <div className="w-10 h-10 bg-[#FFD700] group-hover:bg-[#fffeeb] rounded-full flex items-center justify-center transition-colors duration-300">
+                <ArrowUpRight className="w-5 h-5 text-[#fffeeb] group-hover:text-[#2B2118] transition-transform duration-300 ease-in-out group-hover:rotate-45" />
+              </div>
+            </a>
+          </div>
+          <div className="lg:col-span-7">
+            {faqs.map((faq, idx) => (<AccordionItem key={idx} title={faq.q} content={faq.a} />))}
+          </div>
         </div>
       </div>
     </section>
@@ -554,14 +561,14 @@ const ContactForm = ({ lang }) => {
   };
 
   return (
-    <section className="bg-slate-50 py-24 px-6 relative" id="rezervacija">
+    <section className="bg-[#FFFDD0] py-24 px-6 relative" id="rezervacija">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
-          <span className="bg-blue-100 text-blue-800 text-xs font-bold px-4 py-1.5 rounded-full mb-4 inline-block uppercase tracking-wider">{t.form_badge}</span>
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-4">{t.form_title}</h2>
-          <p className="text-slate-500 text-lg">{t.form_desc}</p>
+          <span className="bg-[#FFD700] text-[#2B2118] text-xs font-bold px-4 py-1.5 rounded-full mb-4 inline-block uppercase tracking-wider">{t.form_badge}</span>
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#2B2118] mb-4">{t.form_title}</h2>
+          <p className="text-[#2B2118] text-lg">{t.form_desc}</p>
         </div>
-        <div className="bg-white p-8 md:p-12 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 min-h-[400px] flex flex-col justify-center">
+        <div className="bg-[#fffeeb] p-8 md:p-12 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 min-h-[400px] flex flex-col justify-center">
           {status === "success" ? (
             <div className="text-center animate-fade-in flex flex-col items-center py-10">
               <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-6"><svg className="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg></div>
@@ -574,18 +581,18 @@ const ContactForm = ({ lang }) => {
               <input type="hidden" name="form-name" value="rezervacija" />
               <p className="hidden"><input name="bot-field" /></p>
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-2"><label htmlFor="ime" className="text-sm font-semibold text-slate-700 ml-1">{t.form_name}</label><input type="text" id="ime" name="ime" required className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-500/20 outline-none" /></div>
-                <div className="space-y-2"><label htmlFor="prezime" className="text-sm font-semibold text-slate-700 ml-1">{t.form_surname}</label><input type="text" id="prezime" name="prezime" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-500/20 outline-none" /></div>
+                <div className="space-y-2"><label htmlFor="ime" className="text-sm font-semibold text-[#2B2118] ml-1">{t.form_name}</label><input type="text" id="ime" name="ime" required className="w-full bg-[#fffeeb] border border-[#FFD700] rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-500/20 outline-none" /></div>
+                <div className="space-y-2"><label htmlFor="prezime" className="text-sm font-semibold text-[#2B2118] ml-1">{t.form_surname}</label><input type="text" id="prezime" name="prezime" className="w-full bg-[#fffeeb] border border-[#FFD700] rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-500/20 outline-none" /></div>
               </div>
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-2"><label htmlFor="email" className="text-sm font-semibold text-slate-700 ml-1">{t.form_email}</label><input type="email" id="email" name="email" required className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-500/20 outline-none" /></div>
-                <div className="space-y-2"><label htmlFor="telefon" className="text-sm font-semibold text-slate-700 ml-1">{t.form_phone}</label><input type="tel" id="telefon" name="telefon" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-500/20 outline-none" /></div>
+                <div className="space-y-2"><label htmlFor="email" className="text-sm font-semibold text-[#2B2118] ml-1">{t.form_email}</label><input type="email" id="email" name="email" required className="w-full bg-[#fffeeb] border border-[#FFD700] rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-500/20 outline-none" /></div>
+                <div className="space-y-2"><label htmlFor="telefon" className="text-sm font-semibold text-[#2B2118] ml-1">{t.form_phone}</label><input type="tel" id="telefon" name="telefon" className="w-full bg-[#fffeeb] border border-[#FFD700] rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-500/20 outline-none" /></div>
               </div>
-              <div className="space-y-2"><label htmlFor="poruka" className="text-sm font-semibold text-slate-700 ml-1">{t.form_message}</label><textarea id="poruka" name="poruka" required rows="4" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-500/20 outline-none resize-none"></textarea></div>
+              <div className="space-y-2"><label htmlFor="poruka" className="text-sm font-semibold text-[#2B2118] ml-1">{t.form_message}</label><textarea id="poruka" name="poruka" required rows="4" className="w-full bg-[#fffeeb] border border-[#FFD700] rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-500/20 outline-none resize-none"></textarea></div>
               <div className="pt-4 flex justify-end">
-                <button type="submit" disabled={status === "submitting"} className="group flex items-center bg-slate-900 hover:bg-slate-800 transition-colors duration-300 rounded-full pl-8 pr-2 py-2 shadow-lg disabled:opacity-70">
-                  <span className="font-medium text-white mr-4">{status === "submitting" ? t.form_sending : t.form_btn}</span>
-                  <div className="w-10 h-10 bg-white/20 group-hover:bg-white rounded-full flex items-center justify-center transition-colors"><ArrowUpRight className="w-5 h-5 text-white group-hover:text-slate-900 transition-transform group-hover:rotate-45" /></div>
+                <button type="submit" disabled={status === "submitting"} className="group flex items-center bg-[#2B2118] hover:bg-[#fffeeb] border border-[#FFD700] transition-colors duration-300 rounded-full pl-8 pr-2 py-2 shadow-lg disabled:opacity-70">
+                  <span className="font-medium text-[#FFD700] group-hover:text-[#2B2118] mr-4">{status === "submitting" ? t.form_sending : t.form_btn}</span>
+                  <div className="w-10 h-10 bg-[#FFD700] border border-[#FFD700] rounded-full flex items-center justify-center transition-colors"><ArrowUpRight className="w-5 h-5 text-[#2B2118] group-hover:text-slate-900 transition-transform group-hover:rotate-45" /></div>
                 </button>
               </div>
             </form>
@@ -609,11 +616,15 @@ const ScrollToTopButton = () => {
   }, []);
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
   return (
-    <button type="button" onClick={scrollToTop} className={["fixed bottom-6 right-6 z-50 group w-12 h-12 md:w-14 md:h-14 rounded-full bg-slate-900 shadow-xl flex items-center justify-center transition-all duration-500 ease-in-out focus:outline-none focus:ring-2", visible ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-8 pointer-events-none"].join(" ")}>
-      <div className="w-10 h-10 md:w-12 md:h-12 bg-white/20 group-hover:bg-white rounded-full flex items-center justify-center transition-colors duration-300"><ArrowUpRight className="w-5 h-5 md:w-6 md:h-6 text-white group-hover:text-slate-900 transition-transform duration-300 ease-in-out -rotate-45 group-hover:rotate-0" /></div>
+    <button type="button" onClick={scrollToTop} className={["fixed bottom-6 right-6 z-50 group w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#2B2118] hover:bg-[#2B2118] shadow-xl flex items-center justify-center transition-all duration-500 ease-in-out focus:outline-none border border-[#FFD700]", visible ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-8 pointer-events-none"].join(" ")}>
+      <div className="w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center transition-colors duration-300">
+        <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6 text-[#FFD700] group-hover:text-[#FFD700] transition-transform duration-300 ease-in-out group-hover:-rotate-45" />
+      </div>
     </button>
   );
 };
+
+
 
 // ==========================================
 // 7. CHAT DUGMIĆI (WhatsApp & Viber)
@@ -644,9 +655,18 @@ const FloatingChat = () => {
           <span className="absolute left-full ml-3 px-2 py-1 bg-slate-900 text-white text-xs rounded opacity-0 group-hover:opacity-100 whitespace-nowrap pointer-events-none transition-opacity">WhatsApp</span>
         </a>
       </div>
-      <button onClick={() => setIsOpen(!isOpen)} className="w-14 h-14 bg-slate-900 hover:bg-slate-800 rounded-full flex items-center justify-center shadow-xl transition-transform hover:scale-105 pointer-events-auto">
-        {isOpen ? (<svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>) : (<svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>)}
+      <button onClick={() => setIsOpen(!isOpen)} className="w-14 h-14 bg-[#2B2118] hover:bg-[#2B2118] rounded-full flex items-center justify-center shadow-xl transition-transform hover:scale-105 pointer-events-auto border border-[#FFD700]">
+        {isOpen ? (
+          <svg className="w-6 h-6" style={{ color: '#FFD700' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        ) : (
+          <svg className="w-6 h-6" style={{ color: '#FFD700' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+          </svg>
+        )}
       </button>
+
     </div>
   );
 };

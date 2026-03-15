@@ -37,3 +37,21 @@
 .animate-fade-in {
   animation: fade-in 0.3s ease-in-out;
 }
+
+
+/* Swiper navigacijske strelice */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #FFD700 !important;
+}
+
+/* Swiper pagination tackice */
+.swiper-pagination-bullet {
+  background: #FFD700 !important;
+  opacity: 0.4;
+}
+
+.swiper-pagination-bullet-active {
+  background: #FFD700 !important;
+  opacity: 1;
+}
