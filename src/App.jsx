@@ -160,9 +160,8 @@ const Navbar = ({ lang, setLang }) => {
             <button
               onClick={() => setLang('sr')}
               aria-label="Srpski jezik"
-              className={`w-8 h-8 rounded-full overflow-hidden flex items-center justify-center transition-all duration-300 ${
-                lang === 'sr' ? 'ring-2 ring-[#FFD700] ring-offset-2 ring-offset-slate-900 scale-110' : 'opacity-60 hover:opacity-100 hover:scale-105'
-              }`}
+              className={`w-8 h-8 rounded-full overflow-hidden flex items-center justify-center transition-all duration-300 ${lang === 'sr' ? 'ring-2 ring-[#FFD700] ring-offset-2 ring-offset-slate-900 scale-110' : 'opacity-60 hover:opacity-100 hover:scale-105'
+                }`}
             >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" className="w-full h-full object-cover">
                 <rect width="3" height="2" fill="#c6363c" />
@@ -173,9 +172,8 @@ const Navbar = ({ lang, setLang }) => {
             <button
               onClick={() => setLang('en')}
               aria-label="English language"
-              className={`w-8 h-8 rounded-full overflow-hidden flex items-center justify-center transition-all duration-300 ${
-                lang === 'en' ? 'ring-2 ring-[#FFD700] ring-offset-2 ring-offset-slate-900 scale-110' : 'opacity-60 hover:opacity-100 hover:scale-105'
-              }`}
+              className={`w-8 h-8 rounded-full overflow-hidden flex items-center justify-center transition-all duration-300 ${lang === 'en' ? 'ring-2 ring-[#FFD700] ring-offset-2 ring-offset-slate-900 scale-110' : 'opacity-60 hover:opacity-100 hover:scale-105'
+                }`}
             >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" className="w-full h-full object-cover">
                 <clipPath id="s">
@@ -196,9 +194,8 @@ const Navbar = ({ lang, setLang }) => {
             <button
               onClick={() => setLang('hu')}
               aria-label="Magyar nyelv"
-              className={`w-8 h-8 rounded-full overflow-hidden flex items-center justify-center transition-all duration-300 ${
-                lang === 'hu' ? 'ring-2 ring-[#FFD700] ring-offset-2 ring-offset-slate-900 scale-110' : 'opacity-60 hover:opacity-100 hover:scale-105'
-              }`}
+              className={`w-8 h-8 rounded-full overflow-hidden flex items-center justify-center transition-all duration-300 ${lang === 'hu' ? 'ring-2 ring-[#FFD700] ring-offset-2 ring-offset-slate-900 scale-110' : 'opacity-60 hover:opacity-100 hover:scale-105'
+                }`}
             >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" className="w-full h-full object-cover">
                 <rect width="3" height="2" fill="#436F4D" />
@@ -243,7 +240,7 @@ const Hero = ({ lang }) => {
   const testimonials = getTestimonials();
 
   return (
-    <header className="relative min-h-[95vh] flex flex-col items-center justify-center w-full overflow-hidden pb-8 pt-24 sm:pt-32">
+    <header className="relative min-h-[100vh] flex flex-col items-center justify-center w-full overflow-hidden pb-16 pt-24 sm:pt-32 sm:pb-32 lg:pb-32">
       <img
         src="/hero.webp"
         alt="Jezero Palić"
@@ -257,15 +254,15 @@ const Hero = ({ lang }) => {
 
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/80" />
 
-      <div className="relative z-10 w-full max-w-5xl mx-auto px-6 text-center flex flex-col items-center justify-center h-full">
-        <h1 className="text-6xl sm:text-7xl md:text-8xl font-serif font-bold text-[#fffeeb] mb-4 leading-tight drop-shadow-2xl">
+      <div className="relative z-10 w-full max-w-5xl mx-auto px-6 text-center flex flex-col items-center justify-center h-full space-y-6 sm:space-y-8 lg:pb-32">
+        <h1 className="text-6xl sm:text-7xl md:text-8xl font-serif font-bold text-[#fffeeb] leading-tight drop-shadow-2xl">
           {t.hero_title}
         </h1>
-        <p className="text-[#fffeeb] uppercase tracking-[0.2em] sm:tracking-[0.3em] font-light text-base md:text-2xl mb-10 drop-shadow-lg animate-bounce-in">
+
+        <p className="text-[#fffeeb] uppercase tracking-[0.2em] sm:tracking-[0.3em] font-light text-base md:text-2xl drop-shadow-lg animate-bounce-in">
           {t.hero_subtitle}
         </p>
 
-        {/* FIX: nema više razmaka posle group-hover: */}
         <a
           href="#rezervacija"
           className="group flex items-center bg-[#FFD700]/20 hover:bg-transparent transition-all duration-300 rounded-full pl-6 pr-2 py-2 border border-[#FFD700] shadow-xl"
@@ -277,31 +274,72 @@ const Hero = ({ lang }) => {
             <ArrowUpRight className="w-5 h-5 transition-transform duration-300 ease-in-out group-hover:rotate-45" style={{ color: '#fffeeb' }} />
           </div>
         </a>
+
+        {/* RECENZIJE - NA MOBILU/ TABLETU: centrirano ispod | DESKTOP: dole desno */}
+        <div className="lg:hidden w-full max-w-sm mx-auto mt-8 z-20">
+          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-2xl p-4 sm:p-5 w-full">
+            <Swiper
+              modules={[Autoplay]}
+              autoplay={{ delay: 5000, disableOnInteraction: false }}
+              loop
+              allowTouchMove={true}
+              className="w-full h-auto"
+            >
+              {testimonials.map((t_item, index) => (
+                <SwiperSlide key={index}>
+                  <div className="flex flex-col items-center text-center gap-2 sm:gap-3">
+                    <div className="flex gap-1 justify-center">
+                      {[...Array(5)].map((_, i) => (
+                        <svg key={i} className="w-3.5 h-3.5 sm:w-4 sm:h-4 drop-shadow-md" style={{ color: '#FFD700', fill: '#FFD700' }} viewBox="0 0 20 20">
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                      ))}
+                    </div>
+                    <p className="text-[#fffeeb] text-xs sm:text-sm font-light italic leading-relaxed">
+                      "{t_item.text}"
+                    </p>
+                    <p className="text-xs font-medium uppercase tracking-wider text-[#fffeeb]">
+                      {t_item.author}
+                    </p>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        </div>
       </div>
 
-      {/* Recenzije — donji desni ugao*/}
-      <div className="block absolute bottom-8 right-10 z-10 w-80 bg-white/10 backdrop-blur-md border border-white/20 p-5 rounded-2xl shadow-2xl">
-        <Swiper modules={[Autoplay]} autoplay={{ delay: 5000, disableOnInteraction: false }} loop allowTouchMove={false} className="w-full">
-          {testimonials.map((t_item, index) => (
-            <SwiperSlide key={index}>
-              <div className="flex flex-col items-center text-center gap-3">
-                <div className="flex gap-1 justify-center">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-4 h-4 drop-shadow-md" style={{ color: '#FFD700', fill: '#FFD700' }} viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
+      {/* DESKTOP: RECENZIJE DOLE DESNO */}
+      <div className="hidden lg:block absolute bottom-6 right-8 w-80 z-50 lg:bottom-4 lg:right-6 xl:right-8 xl:bottom-6">
+        <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-2xl p-5 w-full">
+          <Swiper
+            modules={[Autoplay]}
+            autoplay={{ delay: 5000, disableOnInteraction: false }}
+            loop
+            allowTouchMove={true}
+            className="w-full h-auto"
+          >
+            {testimonials.map((t_item, index) => (
+              <SwiperSlide key={index}>
+                <div className="flex flex-col items-center text-center gap-3">
+                  <div className="flex gap-1 justify-center">
+                    {[...Array(5)].map((_, i) => (
+                      <svg key={i} className="w-4 h-4 drop-shadow-md" style={{ color: '#FFD700', fill: '#FFD700' }} viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
+                  <p className="text-[#fffeeb] text-sm font-light italic leading-relaxed">
+                    "{t_item.text}"
+                  </p>
+                  <p className="text-xs font-medium uppercase tracking-wider text-[#fffeeb]">
+                    {t_item.author}
+                  </p>
                 </div>
-                <p className="text-[#fffeeb] text-sm font-light italic leading-relaxed">
-                  "{t_item.text}"
-                </p>
-                <p className="text-xs font-medium uppercase tracking-wider text-[#fffeeb]">
-                  {t_item.author}
-                </p>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </div>
     </header>
   );
@@ -795,16 +833,14 @@ const AccordionItem = ({ title, content }) => {
       >
         <h3 className="font-medium text-lg text-[#2B2118] pr-8">{title}</h3>
         <Plus
-          className={`w-5 h-5 text-[#2B2118] shrink-0 transition-transform duration-300 ease-in-out ${
-            isOpen ? 'rotate-45' : ''
-          }`}
+          className={`w-5 h-5 text-[#2B2118] shrink-0 transition-transform duration-300 ease-in-out ${isOpen ? 'rotate-45' : ''
+            }`}
         />
       </button>
       {/* FIX: max-h-40 ➜ max-h-96 */}
       <div
-        className={`transition-all duration-300 ease-in-out px-6 ${
-          isOpen ? 'max-h-96 pb-5 opacity-100' : 'max-h-0 py-0 opacity-0'
-        }`}
+        className={`transition-all duration-300 ease-in-out px-6 ${isOpen ? 'max-h-96 pb-5 opacity-100' : 'max-h-0 py-0 opacity-0'
+          }`}
       >
         <p className="text-[#2B2118] text-sm leading-relaxed">{content}</p>
       </div>
@@ -992,9 +1028,8 @@ const ContactForm = ({ lang }) => {
                 <p className="mb-4 text-center text-sm font-medium text-red-600">{t.form_error}</p>
               )}
               <form
-                className={`space-y-6 transition-opacity duration-300 ${
-                  status === 'submitting' ? 'opacity-50 pointer-events-none' : 'opacity-100'
-                }`}
+                className={`space-y-6 transition-opacity duration-300 ${status === 'submitting' ? 'opacity-50 pointer-events-none' : 'opacity-100'
+                  }`}
                 name="rezervacija"
                 method="POST"
                 data-netlify="true"
@@ -1136,9 +1171,8 @@ const FloatingChat = () => {
   return (
     <div className="fixed bottom-6 left-6 z-[999] flex flex-col items-center gap-3 pointer-events-none">
       <div
-        className={`flex flex-col gap-3 transition-all duration-300 origin-bottom pointer-events-auto ${
-          isOpen ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-75 translate-y-10 pointer-events-none'
-        }`}
+        className={`flex flex-col gap-3 transition-all duration-300 origin-bottom pointer-events-auto ${isOpen ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-75 translate-y-10 pointer-events-none'
+          }`}
       >
         {/* VIBER */}
         <a
