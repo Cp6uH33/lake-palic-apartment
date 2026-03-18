@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-import { MapPin, Wifi, Car, Airplay, Phone, Mail, Plus, ArrowUpRight, Code2 } from 'lucide-react';
+import { MapPin, Wifi, Car, Airplay, Phone, Mail, Plus, ArrowUpRight, Code2, ArrowUp } from 'lucide-react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -134,7 +134,7 @@ const Navbar = ({ lang, setLang }) => {
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-[#2B2118]/80 backdrop-blur-md shadow-lg py-4' : 'bg-transparent py-6'}`}>
+    <nav className={`fixed top-0 left-0 w-full z-60 transition-all duration-300 ${scrolled ? 'bg-[#2B2118]/80 backdrop-blur-md shadow-lg py-4' : 'bg-transparent py-6'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <div className="flex items-center gap-4 sm:gap-8 group">
           <img
@@ -270,13 +270,13 @@ const Hero = ({ lang }) => {
           <span className="font-medium text-[#fffeeb] transition-colors duration-300 mr-4 text-sm sm:text-base">
             {t.btn_book}
           </span>
-          <div className="w-10 h-10 bg-transparent border border-[#FFD700]/30 rounded-full flex items-center justify-center transition-colors duration-300">
+          <div className="w-10 h-10 bg-transparent rounded-full flex items-center justify-center transition-colors duration-300">
             <ArrowUpRight className="w-5 h-5 transition-transform duration-300 ease-in-out group-hover:rotate-45" style={{ color: '#fffeeb' }} />
           </div>
         </a>
 
-        {/* RECENZIJE - NA MOBILU/ TABLETU: centrirano ispod | DESKTOP: dole desno */}
-        <div className="lg:hidden w-full max-w-sm mx-auto mt-8 z-20">
+        {/* RECENZIJE */}
+        <div className="lg:hidden w-full max-w-sm mx-auto mt-8 z-30">
           <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-2xl p-4 sm:p-5 w-full">
             <Swiper
               modules={[Autoplay]}
@@ -310,7 +310,7 @@ const Hero = ({ lang }) => {
       </div>
 
       {/* DESKTOP: RECENZIJE DOLE DESNO */}
-      <div className="hidden lg:block absolute bottom-6 right-8 w-80 z-50 lg:bottom-4 lg:right-6 xl:right-8 xl:bottom-6">
+      <div className="hidden lg:block absolute bottom-6 right-8 w-80 z-40 lg:bottom-4 lg:right-6 xl:right-8 xl:bottom-6">
         <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-2xl p-5 w-full">
           <Swiper
             modules={[Autoplay]}
@@ -368,7 +368,7 @@ const Accommodation = ({ lang }) => {
         </div>
         <div className="grid lg:grid-cols-2 gap-12">
           {/* ── Apartman 1 ── */}
-          <div className="bg-[#fffeeb] rounded-3xl overflow-hidden shadow-lg border border-gray-100 flex flex-col">
+          <div className="bg-[#fffeeb] rounded-3xl overflow-hidden shadow-lg border border-[#FFD700] flex flex-col">
             <div className="h-72 md:h-80 relative group">
               <Swiper modules={[Navigation, Pagination]} navigation pagination={{ clickable: true }} loop className="w-full h-full">
                 <SwiperSlide>
@@ -383,7 +383,7 @@ const Accommodation = ({ lang }) => {
                 </SwiperSlide>
                 <SwiperSlide>
                   <img
-                    src="/PSlika2.webp"
+                    src="/PSlika6.webp"
                     loading="lazy"
                     width={800}
                     height={600}
@@ -393,7 +393,47 @@ const Accommodation = ({ lang }) => {
                 </SwiperSlide>
                 <SwiperSlide>
                   <img
-                    src="/PSlika5.webp"
+                    src="/PSlika3.webp"
+                    loading="lazy"
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-cover"
+                    alt="Dnevna soba apartmana Lake Palić Apartment na Paliću"
+                  />
+                </SwiperSlide> 
+                <SwiperSlide>
+                  <img
+                    src="/PSlika7.webp"
+                    loading="lazy"
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-cover"
+                    alt="Dnevna soba apartmana Lake Palić Apartment na Paliću"
+                  />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img
+                    src="/PSlika4.webp"
+                    loading="lazy"
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-cover"
+                    alt="Dnevna soba apartmana Lake Palić Apartment na Paliću"
+                  />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img
+                    src="/PSlika9.webp"
+                    loading="lazy"
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-cover"
+                    alt="Dnevna soba apartmana Lake Palić Apartment na Paliću"
+                  />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img
+                    src="/PSlika8.webp"
                     loading="lazy"
                     width={800}
                     height={600}
@@ -402,19 +442,19 @@ const Accommodation = ({ lang }) => {
                   />
                 </SwiperSlide>
               </Swiper>
-              <div className="absolute top-4 right-4 z-10 bg-[#fffeeb] backdrop-blur py-1 px-3 rounded-full text-sm font-bold text-[#2B2118] shadow-sm">
+              <div className="absolute top-4 right-4 z-10 bg-[#FFD700] border border-[#2B2118]/50 backdrop-blur py-1 px-3 rounded-full text-sm font-bold text-[#2B2118] shadow-sm">
                 {t.acc_max_people}
               </div>
             </div>
             <div className="p-8 flex-1 flex flex-col justify-between">
               <div>
                 <h3 className="text-3xl font-serif font-bold text-[#2B2118] mb-4">Lake Palić Apartment</h3>
-                <p className="text-[#2B2118]/70 leading-relaxed mb-6">{t.acc1_desc}</p>
+                <p className="text-[#2B2118] leading-relaxed mb-6">{t.acc1_desc}</p>
               </div>
               <div className="grid grid-cols-2 gap-4 pt-6 border-t border-gray-100">
                 {amenities.map((item, i) => (
-                  <div key={i} className="flex items-center text-[#2B2118]/70 text-sm">
-                    <span className="text-[#2B2118]/70 mr-2">{item.icon}</span> {item.text}
+                  <div key={i} className="flex items-center text-[#2B2118] text-sm">
+                    <span className="text-[#2B2118] mr-2">{item.icon}</span> {item.text}
                   </div>
                 ))}
               </div>
@@ -422,7 +462,7 @@ const Accommodation = ({ lang }) => {
           </div>
 
           {/* ── Apartman 2 ── */}
-          <div className="bg-[#fffeeb] rounded-3xl overflow-hidden shadow-lg border border-gray-100 flex flex-col">
+          <div className="bg-[#fffeeb] rounded-3xl overflow-hidden shadow-lg border border-[#FFD700] flex flex-col">
             <div className="h-72 md:h-80 relative group">
               <Swiper modules={[Navigation, Pagination]} navigation pagination={{ clickable: true }} loop className="w-full h-full">
                 <SwiperSlide>
@@ -515,20 +555,30 @@ const Accommodation = ({ lang }) => {
                     alt="Kupatilo apartmana Rakanović blizu jezera Palić"
                   />
                 </SwiperSlide>
+                <SwiperSlide>
+                  <img
+                    src="/Rslika11.webp"
+                    loading="lazy"
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-cover"
+                    alt="Kupatilo apartmana Rakanović blizu jezera Palić"
+                  />
+                </SwiperSlide>
               </Swiper>
-              <div className="absolute top-4 right-4 z-10 bg-[#fffeeb] backdrop-blur py-1 px-3 rounded-full text-sm font-bold text-[#2B2118] shadow-sm">
+              <div className="absolute top-4 right-4 z-10 bg-[#FFD700] border border-[#2B2118]/50 backdrop-blur py-1 px-3 rounded-full text-sm font-bold text-[#2B2118] shadow-sm">
                 {t.acc_max_people}
               </div>
             </div>
             <div className="p-8 flex-1 flex flex-col justify-between">
               <div>
                 <h3 className="text-3xl font-serif font-bold text-[#2B2118] mb-4">Apartman Rakanović</h3>
-                <p className="text-[#2B2118]/70 leading-relaxed mb-6">{t.acc2_desc}</p>
+                <p className="text-[#2B2118] leading-relaxed mb-6">{t.acc2_desc}</p>
               </div>
               <div className="grid grid-cols-2 gap-4 pt-6 border-t border-gray-100">
                 {amenities.map((item, i) => (
-                  <div key={i} className="flex items-center text-[#2B2118]/70 text-sm">
-                    <span className="text-[#2B2118]/70 mr-2">{item.icon}</span> {item.text}
+                  <div key={i} className="flex items-center text-[#2B2118] text-sm">
+                    <span className="text-[#2B2118] mr-2">{item.icon}</span> {item.text}
                   </div>
                 ))}
               </div>
@@ -735,11 +785,11 @@ const Guide = ({ lang }) => {
             <div
               key={index}
               onClick={() => setSelectedPlace(place)}
-              className="bg-[#fffeeb] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 group flex flex-col h-full cursor-pointer"
+              className="bg-[#fffeeb] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 group flex flex-col h-full cursor-pointer border border-[#FFD700]"
             >
               <div className="h-56 w-full relative overflow-hidden bg-slate-200">
                 <div className="absolute top-4 left-4 z-10">
-                  <span className="text-xs font-bold text-[#2B2118] bg-[#FFD700] backdrop-blur px-3 py-1.5 rounded-full uppercase tracking-wider">
+                  <span className="text-xs font-bold text-[#2B2118] bg-[#FFD700] border border-[#2B2118] backdrop-blur px-3 py-1.5 rounded-full uppercase tracking-wider">
                     {place.tag}
                   </span>
                 </div>
@@ -837,7 +887,6 @@ const AccordionItem = ({ title, content }) => {
             }`}
         />
       </button>
-      {/* FIX: max-h-40 ➜ max-h-96 */}
       <div
         className={`transition-all duration-300 ease-in-out px-6 ${isOpen ? 'max-h-96 pb-5 opacity-100' : 'max-h-0 py-0 opacity-0'
           }`}
@@ -942,7 +991,7 @@ const FAQ = ({ lang }) => {
       <div className="px-6 max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-12 gap-16 lg:gap-8">
           <div className="lg:col-span-5 flex flex-col items-start">
-            <span className="bg-[#FFD700] text-[#2B2118] text-xs font-semibold px-3 py-1 rounded-full mb-6">
+            <span className="bg-[#FFD700] text-[#2B2118] border border-[#2B2118] text-xs font-semibold px-3 py-1 rounded-full mb-6">
               {t.faq_badge}
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-[#2B2118] mb-6 leading-tight whitespace-pre-line">
@@ -951,13 +1000,13 @@ const FAQ = ({ lang }) => {
             <p className="text-[#2B2118] text-lg mb-10 max-w-md">{t.faq_desc}</p>
             <a
               href="#rezervacija"
-              className="group flex items-center bg-transparent border border-[#FFD700] hover:bg-[#2B2118] transition-colors duration-300 rounded-full pl-6 pr-2 py-2"
+              className="group flex items-center bg-transparent border border-[#2B2118] hover:bg-[#2B2118] transition-colors duration-300 rounded-full pl-6 pr-2 py-2"
             >
               <span className="font-medium text-[#2B2118] group-hover:text-white transition-colors duration-300 mr-4">
                 {t.btn_contact}
               </span>
-              <div className="w-10 h-10 bg-[#FFD700] group-hover:bg-[#fffeeb] rounded-full flex items-center justify-center transition-colors duration-300">
-                <ArrowUpRight className="w-5 h-5 text-[#fffeeb] group-hover:text-[#2B2118] transition-transform duration-300 ease-in-out group-hover:rotate-45" />
+              <div className="w-10 h-10 bg-[#FFD700] group-hover:bg-[#fffeeb] rounded-full border border-[#2B2118] flex items-center justify-center transition-colors duration-300">
+                <ArrowUpRight className="w-5 h-5 text-[#2B2118] group-hover:text-[#2B2118] transition-transform duration-300 ease-in-out group-hover:rotate-45" />
               </div>
             </a>
           </div>
@@ -997,14 +1046,14 @@ const ContactForm = ({ lang }) => {
     <section className="bg-[#FFFDD0] py-24 px-6 relative" id="rezervacija">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
-          <span className="bg-[#FFD700] text-[#2B2118] text-xs font-bold px-4 py-1.5 rounded-full mb-4 inline-block uppercase tracking-wider">
+          <span className="bg-[#FFD700] text-[#2B2118] border border-[#2B2118] text-xs font-bold px-4 py-1.5 rounded-full mb-4 inline-block uppercase tracking-wider">
             {t.form_badge}
           </span>
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#2B2118] mb-4">{t.form_title}</h2>
           <p className="text-[#2B2118] text-lg">{t.form_desc}</p>
         </div>
 
-        <div className="bg-[#fffeeb] p-8 md:p-12 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 min-h-[400px] flex flex-col justify-center">
+        <div className="bg-[#fffeeb] p-8 md:p-12 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-[#FFD700] min-h-[400px] flex flex-col justify-center">
           {status === 'success' ? (
             <div className="text-center animate-fade-in flex flex-col items-center py-10">
               <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-6">
@@ -1149,12 +1198,12 @@ const ScrollToTopButton = () => {
       type="button"
       onClick={scrollToTop}
       className={[
-        'fixed bottom-6 right-6 z-50 group w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#2B2118] hover:bg-[#2B2118]/80 shadow-xl flex items-center justify-center transition-all duration-500 ease-in-out focus:outline-none border border-[#FFD700]',
+        'fixed bottom-6 right-6 z-50 group w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#2B2118] hover:bg-[#fffeeb] hover:border-[#2B2118] shadow-xl flex items-center justify-center transition-all duration-500 ease-in-out focus:outline-none border border-[#FFD700]',
         visible ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-8 pointer-events-none'
       ].join(' ')}
     >
       <div className="w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center transition-colors duration-300">
-        <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6 text-[#FFD700] group-hover:text-[#FFD700] transition-transform duration-300 ease-in-out group-hover:-rotate-45" />
+        <ArrowUp className="w-5 h-5 md:w-6 md:h-6 text-[#FFD700] group-hover:text-[#2B2118] transition-transform duration-300 ease-in-out" />
       </div>
     </button>
   );
@@ -1211,25 +1260,41 @@ const FloatingChat = () => {
       </div>
 
       <button
-        type="button"
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-14 h-14 bg-[#2B2118] hover:bg-[#2B2118]/80 rounded-full flex items-center justify-center shadow-xl transition-transform hover:scale-105 pointer-events-auto border border-[#FFD700]"
-      >
-        {isOpen ? (
-          <svg className="w-6 h-6" style={{ color: '#FFD700' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        ) : (
-          <svg className="w-6 h-6" style={{ color: '#FFD700' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-            />
-          </svg>
-        )}
-      </button>
+  type="button"
+  onClick={() => setIsOpen(!isOpen)}
+  className="group w-14 h-14 bg-[#2B2118] hover:bg-[#fffeeb] rounded-full flex items-center justify-center shadow-xl transition-transform hover:scale-105 pointer-events-auto border border-[#FFD700] hover:border-[#2B2118]"
+>
+  {isOpen ? (
+    <svg
+      className="w-6 h-6 text-[#FFD700] group-hover:text-[#2B2118] transition-colors"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="M6 18L18 6M6 6l12 12"
+      />
+    </svg>
+  ) : (
+    <svg
+      className="w-6 h-6 text-[#FFD700] group-hover:text-[#2B2118] transition-colors"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+      />
+    </svg>
+  )}
+</button>
+
     </div>
   );
 };
