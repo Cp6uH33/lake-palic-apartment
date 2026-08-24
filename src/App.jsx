@@ -145,13 +145,41 @@ const Navbar = ({ lang, setLang }) => {
   return (
     <nav className={`fixed top-0 left-0 w-full z-60 transition-all duration-300 ${scrolled ? 'bg-[#2B2118]/80 backdrop-blur-md shadow-lg py-4' : 'bg-transparent py-6'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-end sm:justify-between items-center">
-        <div className="hidden sm:flex items-center gap-4 sm:gap-8 group">
+        <div className="hidden sm:flex items-center gap-3 sm:gap-4 md:gap-6 lg:gap-8 group">
           <img
-            src="/logo.webp"
-            alt="Lake Palić Apartment, Apartman Rakanović, Apartman Petkov, Lola 1, Lola 2 Logo"
+            src="/apartman_rakanovic.webp"
+            alt="Apartman Rakanović Logo"
             width={80}
             height={80}
-            className="h-10.75 sm:h-13.25 md:h-19.25 lg:h-24 w-auto group-hover:scale-105 transition-transform duration-300"
+            className="h-9 sm:h-11 md:h-14 lg:h-16 w-auto group-hover:scale-105 transition-transform duration-300"
+          />
+          <img
+            src="/lake_palic.webp"
+            alt="Lake Palić Apartment Logo"
+            width={80}
+            height={80}
+            className="h-9 sm:h-11 md:h-14 lg:h-16 w-auto group-hover:scale-105 transition-transform duration-300"
+          />
+          <img
+            src="/apartman_petkov.webp"
+            alt="Apartman Petkov Logo"
+            width={80}
+            height={80}
+            className="h-9 sm:h-11 md:h-14 lg:h-16 w-auto group-hover:scale-105 transition-transform duration-300"
+          />
+          <img
+            src="/lola_1.webp"
+            alt="Lola 1 Apartments Logo"
+            width={80}
+            height={80}
+            className="h-9 sm:h-11 md:h-14 lg:h-16 w-auto group-hover:scale-105 transition-transform duration-300"
+          />
+          <img
+            src="/lola_2.webp"
+            alt="Lola 2 Apartments Logo"
+            width={80}
+            height={80}
+            className="h-9 sm:h-11 md:h-14 lg:h-16 w-auto group-hover:scale-105 transition-transform duration-300"
           />
         </div>
         <div className="flex items-center gap-4 sm:gap-6">
@@ -222,6 +250,14 @@ const Navbar = ({ lang, setLang }) => {
 // ==========================================
 // 2. HERO SEKCIJA (Sa prevedenim recenzijama)
 // ==========================================
+const mobileLogos = [
+  { src: '/lake_palic.webp', alt: 'Lake Palić Apartment Logo' },
+  { src: '/apartman_petkov.webp', alt: 'Apartman Petkov Logo' },
+  { src: '/apartman_rakanovic.webp', alt: 'Apartman Rakanović Logo' },
+  { src: '/lola_1.webp', alt: 'Lola 1 Apartments Logo' },
+  { src: '/lola_2.webp', alt: 'Lola 2 Apartments Logo' }
+];
+
 const Hero = ({ lang }) => {
   const t = translations[lang];
 
@@ -264,13 +300,20 @@ const Hero = ({ lang }) => {
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/80" />
 
       <div className="relative z-10 w-full max-w-5xl mx-auto px-6 text-center flex flex-col items-center justify-center h-full space-y-6 sm:space-y-8 lg:pb-32">
-        <img
-          src="/logo.webp"
-          alt="Lake Palić Apartment, Apartman Rakanović, Apartman Petkov, Lola 1, Lola 2 Logo"
-          width={1639}
-          height={270}
-          className="sm:hidden h-10 w-auto"
-        />
+        <div className="sm:hidden w-full overflow-hidden -translate-y-[20%]">
+          <div className="flex items-center w-max animate-logo-marquee">
+            {[...mobileLogos, ...mobileLogos].map((logo, i) => (
+              <img
+                key={i}
+                src={logo.src}
+                alt={logo.alt}
+                width={80}
+                height={80}
+                className="h-7 w-auto shrink-0 mx-4"
+              />
+            ))}
+          </div>
+        </div>
         <h1 className="text-6xl sm:text-7xl md:text-8xl font-serif font-bold text-[#fffeeb] leading-tight drop-shadow-2xl">
           {t.hero_title}
         </h1>

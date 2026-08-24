@@ -38,6 +38,16 @@
   animation: fade-in 0.3s ease-in-out;
 }
 
+/* Beskonačno pomeranje reda logoa sleva nadesno */
+@keyframes logo-marquee {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0%); }
+}
+
+.animate-logo-marquee {
+  animation: logo-marquee 18s linear infinite;
+}
+
 
 /* Swiper navigacijske strelice */
 .swiper-button-next,
