@@ -257,11 +257,11 @@ const Navbar = ({ lang, setLang }) => {
 // 2. HERO SEKCIJA (Sa prevedenim recenzijama)
 // ==========================================
 const mobileLogos = [
-  { src: '/lake_palic.webp', alt: 'Lake Palić Apartment Logo' },
-  { src: '/apartman_petkov.webp', alt: 'Apartman Petkov Logo' },
-  { src: '/apartman_rakanovic.webp', alt: 'Apartman Rakanović Logo' },
-  { src: '/lola_1.webp', alt: 'Lola 1 Apartments Logo' },
-  { src: '/lola_2.webp', alt: 'Lola 2 Apartments Logo' }
+  { src: '/lake_palic.webp', alt: 'Lake Palić Apartment Logo', heightClass: 'h-15' },
+  { src: '/apartman_petkov.webp', alt: 'Apartman Petkov Logo', heightClass: 'h-15' },
+  { src: '/apartman_rakanovic.webp', alt: 'Apartman Rakanović Logo', heightClass: 'h-15' },
+  { src: '/lola_1.webp', alt: 'Lola 1 Apartments Logo', heightClass: 'h-12.5' },
+  { src: '/lola_2.webp', alt: 'Lola 2 Apartments Logo', heightClass: 'h-12.5' }
 ];
 
 const Hero = ({ lang }) => {
@@ -315,7 +315,7 @@ const Hero = ({ lang }) => {
                 alt={logo.alt}
                 width={80}
                 height={80}
-                className="h-12.5 w-auto shrink-0 mx-7.25"
+                className={`${logo.heightClass} w-auto shrink-0 mx-7.25`}
               />
             ))}
           </div>
