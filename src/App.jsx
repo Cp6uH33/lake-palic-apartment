@@ -19,6 +19,8 @@ const translations = {
     acc_title: "Apartmani",
     acc_desc: "Naši apartmani se nalaze na dva minuta hoda od jezera Palić.",
     acc_max_people: "Max 4 osobe",
+    acc_floor_ground: "Prizemlje",
+    acc_floor_first: "Prvi sprat",
     acc1_desc: "Moderno opremljen i prostran apartman idealan za parove ili porodice. Nudi maksimalan komfor uz prelepu terasu.",
     acc2_desc: "Vaš dom daleko od kuće. Opremljen svim neophodnim uređajima za duži i bezbrižan boravak u prirodi.",
     acc3_desc: "Intiman i tiho smešten apartman koji spaja udobnost i eleganciju. Savršen izbor za goste koji traže mir i privatnost tokom boravka na Paliću.",
@@ -58,6 +60,8 @@ const translations = {
     acc_title: "Our Apartments",
     acc_desc: "Find the perfect accommodation for your needs.",
     acc_max_people: "Max 4 people",
+    acc_floor_ground: "Ground floor",
+    acc_floor_first: "First floor",
     acc1_desc: "Modern and spacious apartment ideal for couples or families. Offers maximum comfort with a beautiful terrace.",
     acc2_desc: "Your home away from home. Equipped with all necessary appliances for a long and carefree stay in nature.",
     acc3_desc: "An intimate, quietly situated apartment that combines comfort and elegance. The perfect choice for guests seeking peace and privacy during their stay in Palić.",
@@ -97,6 +101,8 @@ const translations = {
     acc_title: "Apartmanjaink",
     acc_desc: "Találja meg a tökéletes szállást igényeinek megfelelően.",
     acc_max_people: "Max 4 fő",
+    acc_floor_ground: "Földszint",
+    acc_floor_first: "Első emelet",
     acc1_desc: "Modern és tágas apartman, ideális párok vagy családok számára. Maximális kényelmet nyújt egy gyönyörű terasszal.",
     acc2_desc: "Otthon az otthontól távol. Minden szükséges eszközzel felszerelve egy hosszú és gondtalan természetközeli tartózkodáshoz.",
     acc3_desc: "Bensőséges hangulatú, csendes elhelyezkedésű apartman, amely ötvözi a kényelmet és az eleganciát. Tökéletes választás azoknak, akik nyugalmat és magánéletet keresnek palicsi tartózkodásuk során.",
@@ -180,7 +186,7 @@ const Navbar = ({ lang, setLang }) => {
             width={80}
             height={80}
             className="h-9 sm:h-11 md:h-14 lg:h-16 w-auto group-hover:scale-105 transition-transform duration-300"
-          />
+/>
         </div>
         <div className="flex items-center gap-4 sm:gap-6">
           <a href="#smestaj" className="text-slate-200 hover:text-[#fffeeb] font-medium text-sm transition hidden md:block">
@@ -309,7 +315,7 @@ const Hero = ({ lang }) => {
                 alt={logo.alt}
                 width={80}
                 height={80}
-                className="h-7 w-auto shrink-0 mx-4"
+                className="h-10.5 w-auto shrink-0 mx-6"
               />
             ))}
           </div>
@@ -507,7 +513,8 @@ const Accommodation = ({ lang }) => {
             </div>
             <div className="p-8 flex-1 flex flex-col justify-between">
               <div>
-                <h3 className="text-3xl font-serif font-bold text-[#2B2118] mb-4">Lake Palić Apartment</h3>
+                <h3 className="text-3xl font-serif font-bold text-[#2B2118] mb-1">Lake Palić Apartment</h3>
+                <p className="text-xs font-semibold uppercase tracking-wider text-[#2B2118]/60 mb-4">{t.acc_floor_ground}</p>
                 <p className="text-[#2B2118] leading-relaxed mb-6">{t.acc1_desc}</p>
               </div>
               <div className="grid grid-cols-2 gap-4 pt-6 border-t border-gray-100">
@@ -631,7 +638,8 @@ const Accommodation = ({ lang }) => {
             </div>
             <div className="p-8 flex-1 flex flex-col justify-between">
               <div>
-                <h3 className="text-3xl font-serif font-bold text-[#2B2118] mb-4">Apartman Rakanović</h3>
+                <h3 className="text-3xl font-serif font-bold text-[#2B2118] mb-1">Apartman Rakanović</h3>
+                <p className="text-xs font-semibold uppercase tracking-wider text-[#2B2118]/60 mb-4">{t.acc_floor_first}</p>
                 <p className="text-[#2B2118] leading-relaxed mb-6">{t.acc2_desc}</p>
               </div>
               <div className="grid grid-cols-2 gap-4 pt-6 border-t border-gray-100">
@@ -735,7 +743,8 @@ const Accommodation = ({ lang }) => {
             </div>
             <div className="p-8 flex-1 flex flex-col justify-between">
               <div>
-                <h3 className="text-3xl font-serif font-bold text-[#2B2118] mb-4">Apartman Petkov</h3>
+                <h3 className="text-3xl font-serif font-bold text-[#2B2118] mb-1">Apartman Petkov</h3>
+                <p className="text-xs font-semibold uppercase tracking-wider text-[#2B2118]/60 mb-4">{t.acc_floor_ground}</p>
                 <p className="text-[#2B2118] leading-relaxed mb-6">{t.acc3_desc}</p>
               </div>
               <div className="grid grid-cols-2 gap-4 pt-6 border-t border-gray-100">
@@ -839,7 +848,8 @@ const Accommodation = ({ lang }) => {
             </div>
             <div className="p-8 flex-1 flex flex-col justify-between">
               <div>
-                <h3 className="text-3xl font-serif font-bold text-[#2B2118] mb-4">Lola</h3>
+                <h3 className="text-3xl font-serif font-bold text-[#2B2118] mb-1">Lola</h3>
+                <p className="text-xs font-semibold uppercase tracking-wider text-[#2B2118]/60 mb-4">{t.acc_floor_ground}</p>
                 <p className="text-[#2B2118] leading-relaxed mb-6">{t.acc4_desc}</p>
               </div>
               <div className="grid grid-cols-2 gap-4 pt-6 border-t border-gray-100">
@@ -858,7 +868,7 @@ const Accommodation = ({ lang }) => {
               <Swiper modules={[Navigation, Pagination]} navigation pagination={{ clickable: true }} loop className="w-full h-full">
                 <SwiperSlide>
                   <img
-                    src="/lola2-1.webp"
+                    src="/lolaII1.webp"
                     loading="lazy"
                     width={800}
                     height={600}
@@ -868,7 +878,7 @@ const Accommodation = ({ lang }) => {
                 </SwiperSlide>
                 <SwiperSlide>
                   <img
-                    src="/lola2-2.webp"
+                    src="/lolaII8.webp"
                     loading="lazy"
                     width={800}
                     height={600}
@@ -878,7 +888,7 @@ const Accommodation = ({ lang }) => {
                 </SwiperSlide>
                 <SwiperSlide>
                   <img
-                    src="/lola2-3.webp"
+                    src="/lolaII7.webp"
                     loading="lazy"
                     width={800}
                     height={600}
@@ -888,7 +898,7 @@ const Accommodation = ({ lang }) => {
                 </SwiperSlide>
                 <SwiperSlide>
                   <img
-                    src="/lola2-4.webp"
+                    src="/lolaII4.webp"
                     loading="lazy"
                     width={800}
                     height={600}
@@ -898,7 +908,7 @@ const Accommodation = ({ lang }) => {
                 </SwiperSlide>
                 <SwiperSlide>
                   <img
-                    src="/lola2-5.webp"
+                    src="/lolaII8.webp"
                     loading="lazy"
                     width={800}
                     height={600}
@@ -908,7 +918,7 @@ const Accommodation = ({ lang }) => {
                 </SwiperSlide>
                 <SwiperSlide>
                   <img
-                    src="/lola2-6.webp"
+                    src="/lolaII6.webp"
                     loading="lazy"
                     width={800}
                     height={600}
@@ -918,7 +928,7 @@ const Accommodation = ({ lang }) => {
                 </SwiperSlide>
                 <SwiperSlide>
                   <img
-                    src="/lola2-7.webp"
+                    src="/lolaII3.webp"
                     loading="lazy"
                     width={800}
                     height={600}
@@ -928,7 +938,7 @@ const Accommodation = ({ lang }) => {
                 </SwiperSlide>
                 <SwiperSlide>
                   <img
-                    src="/lola2-8.webp"
+                    src="/lolaII5.webp"
                     loading="lazy"
                     width={800}
                     height={600}
@@ -943,7 +953,8 @@ const Accommodation = ({ lang }) => {
             </div>
             <div className="p-8 flex-1 flex flex-col justify-between">
               <div>
-                <h3 className="text-3xl font-serif font-bold text-[#2B2118] mb-4">Lola 2</h3>
+                <h3 className="text-3xl font-serif font-bold text-[#2B2118] mb-1">Lola 2</h3>
+                <p className="text-xs font-semibold uppercase tracking-wider text-[#2B2118]/60 mb-4">{t.acc_floor_first}</p>
                 <p className="text-[#2B2118] leading-relaxed mb-6">{t.acc5_desc}</p>
               </div>
               <div className="grid grid-cols-2 gap-4 pt-6 border-t border-gray-100">
