@@ -21,6 +21,7 @@ const translations = {
     acc_max_people: "Max 4 osobe",
     acc1_desc: "Moderno opremljen i prostran apartman idealan za parove ili porodice. Nudi maksimalan komfor uz prelepu terasu.",
     acc2_desc: "Vaš dom daleko od kuće. Opremljen svim neophodnim uređajima za duži i bezbrižan boravak u prirodi.",
+    acc3_desc: "Intiman i tiho smešten apartman koji spaja udobnost i eleganciju. Savršen izbor za goste koji traže mir i privatnost tokom boravka na Paliću.",
     guide_title: "Šta videti u okolini?",
     guide_btn: "Saznaj više",
     guide_modal_about: "O lokaciji",
@@ -57,6 +58,7 @@ const translations = {
     acc_max_people: "Max 4 people",
     acc1_desc: "Modern and spacious apartment ideal for couples or families. Offers maximum comfort with a beautiful terrace.",
     acc2_desc: "Your home away from home. Equipped with all necessary appliances for a long and carefree stay in nature.",
+    acc3_desc: "An intimate, quietly situated apartment that combines comfort and elegance. The perfect choice for guests seeking peace and privacy during their stay in Palić.",
     guide_title: "What to see nearby?",
     guide_btn: "Learn more",
     guide_modal_about: "About location",
@@ -93,6 +95,7 @@ const translations = {
     acc_max_people: "Max 4 fő",
     acc1_desc: "Modern és tágas apartman, ideális párok vagy családok számára. Maximális kényelmet nyújt egy gyönyörű terasszal.",
     acc2_desc: "Otthon az otthontól távol. Minden szükséges eszközzel felszerelve egy hosszú és gondtalan természetközeli tartózkodáshoz.",
+    acc3_desc: "Bensőséges hangulatú, csendes elhelyezkedésű apartman, amely ötvözi a kényelmet és az eleganciát. Tökéletes választás azoknak, akik nyugalmat és magánéletet keresnek palicsi tartózkodásuk során.",
     guide_title: "Látnivalók a környéken",
     guide_btn: "Tudjon meg többet",
     guide_modal_about: "A helyszínről",
@@ -139,7 +142,7 @@ const Navbar = ({ lang, setLang }) => {
         <div className="flex items-center gap-4 sm:gap-8 group">
           <img
             src="/logo.webp"
-            alt="Lake Palić Apartment,Apartman Rakanovic Logo"
+            alt="Lake Palić Apartment, Apartman Rakanović, Apartman Petkov Logo"
             width={80}
             height={80}
             className="h-14 sm:h-16 md:h-20 w-auto group-hover:scale-105 transition-transform duration-300"
@@ -366,7 +369,7 @@ const Accommodation = ({ lang }) => {
             <p className="text-[#2B2118] text-lg">{t.acc_desc}</p>
           </div>
         </div>
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-3 gap-12">
           {/* ── Apartman 1 ── */}
           <div className="bg-[#fffeeb] rounded-3xl overflow-hidden shadow-lg border border-[#FFD700] flex flex-col">
             <div className="h-72 md:h-80 relative group">
@@ -574,6 +577,110 @@ const Accommodation = ({ lang }) => {
               <div>
                 <h3 className="text-3xl font-serif font-bold text-[#2B2118] mb-4">Apartman Rakanović</h3>
                 <p className="text-[#2B2118] leading-relaxed mb-6">{t.acc2_desc}</p>
+              </div>
+              <div className="grid grid-cols-2 gap-4 pt-6 border-t border-gray-100">
+                {amenities.map((item, i) => (
+                  <div key={i} className="flex items-center text-[#2B2118] text-sm">
+                    <span className="text-[#2B2118] mr-2">{item.icon}</span> {item.text}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* ── Apartman 3 ── */}
+          <div className="bg-[#fffeeb] rounded-3xl overflow-hidden shadow-lg border border-[#FFD700] flex flex-col">
+            <div className="h-72 md:h-80 relative group">
+              <Swiper modules={[Navigation, Pagination]} navigation pagination={{ clickable: true }} loop className="w-full h-full">
+                <SwiperSlide>
+                  <img
+                    src="/petkov1.webp"
+                    loading="lazy"
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-cover"
+                    alt="Dnevna soba apartmana Petkov blizu jezera Palić"
+                  />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img
+                    src="/petkov2.webp"
+                    loading="lazy"
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-cover"
+                    alt="Dnevna soba apartmana Petkov blizu jezera Palić"
+                  />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img
+                    src="/petkov3.webp"
+                    loading="lazy"
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-cover"
+                    alt="Spavaća soba apartmana Petkov blizu jezera Palić"
+                  />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img
+                    src="/petkov4.webp"
+                    loading="lazy"
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-cover"
+                    alt="Spavaća soba apartmana Petkov blizu jezera Palić"
+                  />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img
+                    src="/petkov5.webp"
+                    loading="lazy"
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-cover"
+                    alt="Kuhinja apartmana Petkov blizu jezera Palić"
+                  />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img
+                    src="/petkov6.webp"
+                    loading="lazy"
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-cover"
+                    alt="Kuhinja apartmana Petkov blizu jezera Palić"
+                  />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img
+                    src="/petkov7.webp"
+                    loading="lazy"
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-cover"
+                    alt="Kupatilo apartmana Petkov blizu jezera Palić"
+                  />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img
+                    src="/petkov8.webp"
+                    loading="lazy"
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-cover"
+                    alt="Kupatilo apartmana Petkov blizu jezera Palić"
+                  />
+                </SwiperSlide>
+              </Swiper>
+              <div className="absolute top-4 right-4 z-10 bg-[#FFD700] border border-[#2B2118]/50 backdrop-blur py-1 px-3 rounded-full text-sm font-bold text-[#2B2118] shadow-sm">
+                {t.acc_max_people}
+              </div>
+            </div>
+            <div className="p-8 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 className="text-3xl font-serif font-bold text-[#2B2118] mb-4">Apartman Petkov</h3>
+                <p className="text-[#2B2118] leading-relaxed mb-6">{t.acc3_desc}</p>
               </div>
               <div className="grid grid-cols-2 gap-4 pt-6 border-t border-gray-100">
                 {amenities.map((item, i) => (
