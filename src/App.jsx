@@ -144,8 +144,8 @@ const Navbar = ({ lang, setLang }) => {
 
   return (
     <nav className={`fixed top-0 left-0 w-full z-60 transition-all duration-300 ${scrolled ? 'bg-[#2B2118]/80 backdrop-blur-md shadow-lg py-4' : 'bg-transparent py-6'}`}>
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <div className="flex items-center gap-4 sm:gap-8 group">
+      <div className="max-w-7xl mx-auto px-6 flex justify-end sm:justify-between items-center">
+        <div className="hidden sm:flex items-center gap-4 sm:gap-8 group">
           <img
             src="/logo.webp"
             alt="Lake Palić Apartment, Apartman Rakanović, Apartman Petkov, Lola 1, Lola 2 Logo"
@@ -258,12 +258,19 @@ const Hero = ({ lang }) => {
         decoding="async"
         width={1920}
         height={1080}
-        className="absolute inset-0 w-full h-full object-cover object-center"
+        className="absolute inset-0 w-full h-full object-cover object-[25%_center] sm:object-center"
       />
 
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/80" />
 
       <div className="relative z-10 w-full max-w-5xl mx-auto px-6 text-center flex flex-col items-center justify-center h-full space-y-6 sm:space-y-8 lg:pb-32">
+        <img
+          src="/logo.webp"
+          alt="Lake Palić Apartment, Apartman Rakanović, Apartman Petkov, Lola 1, Lola 2 Logo"
+          width={1639}
+          height={270}
+          className="sm:hidden h-10 w-auto"
+        />
         <h1 className="text-6xl sm:text-7xl md:text-8xl font-serif font-bold text-[#fffeeb] leading-tight drop-shadow-2xl">
           {t.hero_title}
         </h1>
