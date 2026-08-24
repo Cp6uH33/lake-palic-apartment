@@ -22,6 +22,8 @@ const translations = {
     acc1_desc: "Moderno opremljen i prostran apartman idealan za parove ili porodice. Nudi maksimalan komfor uz prelepu terasu.",
     acc2_desc: "Vaš dom daleko od kuće. Opremljen svim neophodnim uređajima za duži i bezbrižan boravak u prirodi.",
     acc3_desc: "Intiman i tiho smešten apartman koji spaja udobnost i eleganciju. Savršen izbor za goste koji traže mir i privatnost tokom boravka na Paliću.",
+    acc4_desc: "Šarmantan i toplo uređen apartman sa dušom, savršen za sve koji traže domaću atmosferu uz jezero Palić.",
+    acc5_desc: "Sestrinski apartman Lole, iste topline i stila — idealan kada putujete sa prijateljima ili porodicom kojima trebaju dva odvojena, a bliska smeštaja.",
     guide_title: "Šta videti u okolini?",
     guide_btn: "Saznaj više",
     guide_modal_about: "O lokaciji",
@@ -59,6 +61,8 @@ const translations = {
     acc1_desc: "Modern and spacious apartment ideal for couples or families. Offers maximum comfort with a beautiful terrace.",
     acc2_desc: "Your home away from home. Equipped with all necessary appliances for a long and carefree stay in nature.",
     acc3_desc: "An intimate, quietly situated apartment that combines comfort and elegance. The perfect choice for guests seeking peace and privacy during their stay in Palić.",
+    acc4_desc: "A charming, warmly decorated apartment full of character, perfect for those seeking a homely atmosphere by Lake Palić.",
+    acc5_desc: "Lola's sister apartment, sharing the same warmth and style — ideal when traveling with friends or family who'd like two separate yet neighboring stays.",
     guide_title: "What to see nearby?",
     guide_btn: "Learn more",
     guide_modal_about: "About location",
@@ -96,6 +100,8 @@ const translations = {
     acc1_desc: "Modern és tágas apartman, ideális párok vagy családok számára. Maximális kényelmet nyújt egy gyönyörű terasszal.",
     acc2_desc: "Otthon az otthontól távol. Minden szükséges eszközzel felszerelve egy hosszú és gondtalan természetközeli tartózkodáshoz.",
     acc3_desc: "Bensőséges hangulatú, csendes elhelyezkedésű apartman, amely ötvözi a kényelmet és az eleganciát. Tökéletes választás azoknak, akik nyugalmat és magánéletet keresnek palicsi tartózkodásuk során.",
+    acc4_desc: "Bájos, melegen berendezett, karakteres apartman — tökéletes azoknak, akik otthonos hangulatot keresnek a Palicsi-tó mellett.",
+    acc5_desc: "Lola testvér-apartmanja, ugyanazzal a melegséggel és stílussal — ideális, ha barátokkal vagy családdal két külön, de egymáshoz közeli szálláshelyet szeretne.",
     guide_title: "Látnivalók a környéken",
     guide_btn: "Tudjon meg többet",
     guide_modal_about: "A helyszínről",
@@ -142,10 +148,10 @@ const Navbar = ({ lang, setLang }) => {
         <div className="flex items-center gap-4 sm:gap-8 group">
           <img
             src="/logo.webp"
-            alt="Lake Palić Apartment, Apartman Rakanović, Apartman Petkov Logo"
+            alt="Lake Palić Apartment, Apartman Rakanović, Apartman Petkov, Lola 1, Lola 2 Logo"
             width={80}
             height={80}
-            className="h-14 sm:h-16 md:h-20 w-auto group-hover:scale-105 transition-transform duration-300"
+            className="h-10.75 sm:h-13.25 md:h-19.25 lg:h-24 w-auto group-hover:scale-105 transition-transform duration-300"
           />
         </div>
         <div className="flex items-center gap-4 sm:gap-6">
@@ -369,9 +375,9 @@ const Accommodation = ({ lang }) => {
             <p className="text-[#2B2118] text-lg">{t.acc_desc}</p>
           </div>
         </div>
-        <div className="grid lg:grid-cols-3 gap-12">
+        <div className="grid lg:grid-cols-6 gap-12">
           {/* ── Apartman 1 ── */}
-          <div className="bg-[#fffeeb] rounded-3xl overflow-hidden shadow-lg border border-[#FFD700] flex flex-col">
+          <div className="lg:col-span-2 bg-[#fffeeb] rounded-3xl overflow-hidden shadow-lg border border-[#FFD700] flex flex-col">
             <div className="h-72 md:h-80 relative group">
               <Swiper modules={[Navigation, Pagination]} navigation pagination={{ clickable: true }} loop className="w-full h-full">
                 <SwiperSlide>
@@ -465,7 +471,7 @@ const Accommodation = ({ lang }) => {
           </div>
 
           {/* ── Apartman 2 ── */}
-          <div className="bg-[#fffeeb] rounded-3xl overflow-hidden shadow-lg border border-[#FFD700] flex flex-col">
+          <div className="lg:col-span-2 bg-[#fffeeb] rounded-3xl overflow-hidden shadow-lg border border-[#FFD700] flex flex-col">
             <div className="h-72 md:h-80 relative group">
               <Swiper modules={[Navigation, Pagination]} navigation pagination={{ clickable: true }} loop className="w-full h-full">
                 <SwiperSlide>
@@ -589,7 +595,7 @@ const Accommodation = ({ lang }) => {
           </div>
 
           {/* ── Apartman 3 ── */}
-          <div className="bg-[#fffeeb] rounded-3xl overflow-hidden shadow-lg border border-[#FFD700] flex flex-col">
+          <div className="lg:col-span-2 bg-[#fffeeb] rounded-3xl overflow-hidden shadow-lg border border-[#FFD700] flex flex-col">
             <div className="h-72 md:h-80 relative group">
               <Swiper modules={[Navigation, Pagination]} navigation pagination={{ clickable: true }} loop className="w-full h-full">
                 <SwiperSlide>
@@ -681,6 +687,214 @@ const Accommodation = ({ lang }) => {
               <div>
                 <h3 className="text-3xl font-serif font-bold text-[#2B2118] mb-4">Apartman Petkov</h3>
                 <p className="text-[#2B2118] leading-relaxed mb-6">{t.acc3_desc}</p>
+              </div>
+              <div className="grid grid-cols-2 gap-4 pt-6 border-t border-gray-100">
+                {amenities.map((item, i) => (
+                  <div key={i} className="flex items-center text-[#2B2118] text-sm">
+                    <span className="text-[#2B2118] mr-2">{item.icon}</span> {item.text}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* ── Apartman 4 (Lola) ── */}
+          <div className="lg:col-span-2 lg:col-start-2 bg-[#fffeeb] rounded-3xl overflow-hidden shadow-lg border border-[#FFD700] flex flex-col">
+            <div className="h-72 md:h-80 relative group">
+              <Swiper modules={[Navigation, Pagination]} navigation pagination={{ clickable: true }} loop className="w-full h-full">
+                <SwiperSlide>
+                  <img
+                    src="/lola1.webp"
+                    loading="lazy"
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-cover"
+                    alt="Dnevna soba apartmana Lola blizu jezera Palić"
+                  />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img
+                    src="/lola2.webp"
+                    loading="lazy"
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-cover"
+                    alt="Dnevna soba apartmana Lola blizu jezera Palić"
+                  />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img
+                    src="/lola3.webp"
+                    loading="lazy"
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-cover"
+                    alt="Spavaća soba apartmana Lola blizu jezera Palić"
+                  />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img
+                    src="/lola4.webp"
+                    loading="lazy"
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-cover"
+                    alt="Spavaća soba apartmana Lola blizu jezera Palić"
+                  />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img
+                    src="/lola5.webp"
+                    loading="lazy"
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-cover"
+                    alt="Kuhinja apartmana Lola blizu jezera Palić"
+                  />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img
+                    src="/lola6.webp"
+                    loading="lazy"
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-cover"
+                    alt="Kuhinja apartmana Lola blizu jezera Palić"
+                  />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img
+                    src="/lola7.webp"
+                    loading="lazy"
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-cover"
+                    alt="Kupatilo apartmana Lola blizu jezera Palić"
+                  />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img
+                    src="/lola8.webp"
+                    loading="lazy"
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-cover"
+                    alt="Kupatilo apartmana Lola blizu jezera Palić"
+                  />
+                </SwiperSlide>
+              </Swiper>
+              <div className="absolute top-4 right-4 z-10 bg-[#FFD700] border border-[#2B2118]/50 backdrop-blur py-1 px-3 rounded-full text-sm font-bold text-[#2B2118] shadow-sm">
+                {t.acc_max_people}
+              </div>
+            </div>
+            <div className="p-8 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 className="text-3xl font-serif font-bold text-[#2B2118] mb-4">Lola</h3>
+                <p className="text-[#2B2118] leading-relaxed mb-6">{t.acc4_desc}</p>
+              </div>
+              <div className="grid grid-cols-2 gap-4 pt-6 border-t border-gray-100">
+                {amenities.map((item, i) => (
+                  <div key={i} className="flex items-center text-[#2B2118] text-sm">
+                    <span className="text-[#2B2118] mr-2">{item.icon}</span> {item.text}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* ── Apartman 5 (Lola 2) ── */}
+          <div className="lg:col-span-2 lg:col-start-4 bg-[#fffeeb] rounded-3xl overflow-hidden shadow-lg border border-[#FFD700] flex flex-col">
+            <div className="h-72 md:h-80 relative group">
+              <Swiper modules={[Navigation, Pagination]} navigation pagination={{ clickable: true }} loop className="w-full h-full">
+                <SwiperSlide>
+                  <img
+                    src="/lola2-1.webp"
+                    loading="lazy"
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-cover"
+                    alt="Dnevna soba apartmana Lola 2 blizu jezera Palić"
+                  />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img
+                    src="/lola2-2.webp"
+                    loading="lazy"
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-cover"
+                    alt="Dnevna soba apartmana Lola 2 blizu jezera Palić"
+                  />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img
+                    src="/lola2-3.webp"
+                    loading="lazy"
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-cover"
+                    alt="Spavaća soba apartmana Lola 2 blizu jezera Palić"
+                  />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img
+                    src="/lola2-4.webp"
+                    loading="lazy"
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-cover"
+                    alt="Spavaća soba apartmana Lola 2 blizu jezera Palić"
+                  />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img
+                    src="/lola2-5.webp"
+                    loading="lazy"
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-cover"
+                    alt="Kuhinja apartmana Lola 2 blizu jezera Palić"
+                  />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img
+                    src="/lola2-6.webp"
+                    loading="lazy"
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-cover"
+                    alt="Kuhinja apartmana Lola 2 blizu jezera Palić"
+                  />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img
+                    src="/lola2-7.webp"
+                    loading="lazy"
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-cover"
+                    alt="Kupatilo apartmana Lola 2 blizu jezera Palić"
+                  />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img
+                    src="/lola2-8.webp"
+                    loading="lazy"
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-cover"
+                    alt="Kupatilo apartmana Lola 2 blizu jezera Palić"
+                  />
+                </SwiperSlide>
+              </Swiper>
+              <div className="absolute top-4 right-4 z-10 bg-[#FFD700] border border-[#2B2118]/50 backdrop-blur py-1 px-3 rounded-full text-sm font-bold text-[#2B2118] shadow-sm">
+                {t.acc_max_people}
+              </div>
+            </div>
+            <div className="p-8 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 className="text-3xl font-serif font-bold text-[#2B2118] mb-4">Lola 2</h3>
+                <p className="text-[#2B2118] leading-relaxed mb-6">{t.acc5_desc}</p>
               </div>
               <div className="grid grid-cols-2 gap-4 pt-6 border-t border-gray-100">
                 {amenities.map((item, i) => (
