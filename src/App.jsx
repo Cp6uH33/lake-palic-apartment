@@ -908,7 +908,7 @@ const Accommodation = ({ lang }) => {
                 </SwiperSlide>
                 <SwiperSlide>
                   <img
-                    src="/lolaII8.webp"
+                    src="/lolaII2.webp"
                     loading="lazy"
                     width={800}
                     height={600}
@@ -928,7 +928,7 @@ const Accommodation = ({ lang }) => {
                 </SwiperSlide>
                 <SwiperSlide>
                   <img
-                    src="/lolaII3.webp"
+                    src="/lolaII5.webp"
                     loading="lazy"
                     width={800}
                     height={600}
@@ -938,7 +938,7 @@ const Accommodation = ({ lang }) => {
                 </SwiperSlide>
                 <SwiperSlide>
                   <img
-                    src="/lolaII5.webp"
+                    src="/lolaII3.webp"
                     loading="lazy"
                     width={800}
                     height={600}
