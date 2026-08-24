@@ -315,7 +315,7 @@ const Hero = ({ lang }) => {
                 alt={logo.alt}
                 width={80}
                 height={80}
-                className="h-15.75 w-auto shrink-0 mx-9"
+                className="h-12.5 w-auto shrink-0 mx-7.25"
               />
             ))}
           </div>
